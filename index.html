@@ -5,199 +5,187 @@
     <title>Your Name | Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<style>
 
-        /* ===== GLOBAL ===== */
+/* ===== GLOBAL ===== */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+    scroll-behavior:smooth;
+}
 
-        body {
-            background-color: #0f172a;
-            color: #e2e8f0;
-        }
+body{
+    background:#0f172a;
+    color:#e2e8f0;
+}
 
-        section {
-            padding: 80px 20px;
-        }
+section{
+    padding:80px 20px;
+}
 
-        h1, h2, h3 {
-            margin-bottom: 15px;
-        }
+h1,h2,h3{
+    margin-bottom:15px;
+}
 
-        h2 {
-            text-align: center;
-            color: #38bdf8;
-            margin-bottom: 40px;
-        }
+h2{
+    text-align:center;
+    color:#38bdf8;
+    margin-bottom:40px;
+}
 
-        /* ===== NAVBAR ===== */
+/* ===== NAVBAR ===== */
 
-        nav {
-            background: #020617;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+nav{
+    background:#020617;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    position:sticky;
+    top:0;
+}
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #38bdf8;
-        }
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#38bdf8;
+}
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
 
-        .nav-links a {
-            text-decoration: none;
-            color: #e2e8f0;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
+.nav-links a{
+    text-decoration:none;
+    color:#e2e8f0;
+    padding:8px 15px;
+    border-radius:5px;
+}
 
-        .nav-links a:hover {
-            background: #38bdf8;
-            color: black;
-        }
+.nav-links a:hover{
+    background:#38bdf8;
+    color:black;
+}
 
-        /* ===== HERO ===== */
+/* ===== HERO ===== */
 
-        .hero {
-            height: 90vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-        }
+.hero{
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
 
-        .hero h1 {
-            font-size: 48px;
-        }
+.hero h1{
+    font-size:48px;
+}
 
-        .hero p {
-            font-size: 20px;
-            margin: 10px 0 20px 0;
-        }
+.hero p{
+    font-size:20px;
+    margin-bottom:20px;
+}
 
-        /* ===== BUTTONS ===== */
+/* ===== BUTTONS ===== */
 
-        .main-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
+.main-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+}
 
-        .btn {
-            background: #020617;
-            color: #38bdf8;
-            border: 2px solid #38bdf8;
-            padding: 12px 25px;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.btn{
+    background:#020617;
+    color:#38bdf8;
+    border:2px solid #38bdf8;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
 
-        .btn:hover {
-            background: #38bdf8;
-            color: black;
-            transform: translateY(-3px);
-        }
+.btn:hover{
+    background:#38bdf8;
+    color:black;
+}
 
-        /* ===== CARDS ===== */
+/* ===== CARD ===== */
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-        }
+.container{
+    max-width:1000px;
+    margin:auto;
+}
 
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
 
-        .card {
-            background: #020617;
-            padding: 20px;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
+.card{
+    background:#020617;
+    padding:20px;
+    border-radius:10px;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-            background: #020617;
-            border: 1px solid #38bdf8;
-        }
+.card:hover{
+    border:1px solid #38bdf8;
+}
 
-        /* ===== CONTACT ===== */
+/* ===== CONTACT INFO ===== */
 
-        .contact-form {
-            text-align: center;
-        }
+.contact-info{
+    text-align:center;
+    margin-bottom:30px;
+}
 
-        input, textarea {
-            width: 300px;
-            padding: 10px;
-            margin: 10px;
-            border-radius: 5px;
-            border: none;
-        }
+.contact-info p{
+    margin:8px;
+}
 
-        textarea {
-            height: 120px;
-        }
+/* ===== FORM ===== */
 
-        /* ===== SOCIAL ===== */
+.contact-form{
+    text-align:center;
+}
 
-        .social-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+input,textarea{
+    width:300px;
+    padding:10px;
+    margin:10px;
+    border:none;
+    border-radius:5px;
+}
 
-        /* ===== FOOTER ===== */
+textarea{
+    height:120px;
+}
 
-        footer {
-            background: #020617;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
+/* ===== SOCIAL ===== */
 
-        /* ===== MOBILE ===== */
+.social-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
-        @media(max-width: 600px) {
+/* ===== FOOTER ===== */
 
-            .hero h1 {
-                font-size: 32px;
-            }
+footer{
+    background:#020617;
+    text-align:center;
+    padding:20px;
+}
 
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 <body>
@@ -206,48 +194,71 @@
 
 <nav>
 
-    <div class="logo">Your Name</div>
+<div class="logo">Your Name</div>
 
-    <ul class="nav-links">
+<ul class="nav-links">
 
-        <li><a href="#home">Home</a></li>
+<li><a href="#home">Home</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#internships">Internships</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#social">Social</a></li>
 
-        <li><a href="#projects">Projects</a></li>
-
-        <li><a href="#internships">Internships</a></li>
-
-        <li><a href="#events">Events</a></li>
-
-        <li><a href="#contact">Contact</a></li>
-
-        <li><a href="#social">Social</a></li>
-
-    </ul>
+</ul>
 
 </nav>
 
 
-<!-- ===== HERO SECTION ===== -->
+<!-- ===== HERO ===== -->
 
 <section id="home" class="hero">
 
-    <h1>Your Name</h1>
+<h1>Your Name</h1>
 
-    <p>Your Role / Title</p>
+<p>Your Role / Title</p>
 
-    <div class="main-buttons">
+<div class="main-buttons">
 
-        <button class="btn" onclick="location.href='#projects'">Projects</button>
+<button class="btn" onclick="location.href='#education'">Education</button>
 
-        <button class="btn" onclick="location.href='#internships'">Internships</button>
+<button class="btn" onclick="location.href='#projects'">Projects</button>
 
-        <button class="btn" onclick="location.href='#events'">Events</button>
+<button class="btn" onclick="location.href='#internships'">Internships</button>
 
-        <button class="btn" onclick="location.href='#contact'">Contact</button>
+<button class="btn" onclick="location.href='#events'">Events</button>
 
-        <button class="btn" onclick="location.href='#social'">Social Media</button>
+<button class="btn" onclick="location.href='#contact'">Contact</button>
 
-    </div>
+<button class="btn" onclick="location.href='#social'">Social Media</button>
+
+</div>
+
+</section>
+
+
+<!-- ===== EDUCATION ===== -->
+
+<section id="education">
+
+<h2>Education</h2>
+
+<div class="container">
+
+<div class="card">
+
+<h3>Degree Name</h3>
+
+<p>College Name</p>
+
+<p>Year</p>
+
+<p>Details</p>
+
+</div>
+
+</div>
 
 </section>
 
@@ -256,27 +267,25 @@
 
 <section id="projects">
 
-    <h2>Projects</h2>
+<h2>Projects</h2>
 
-    <div class="container">
+<div class="container">
 
-        <div class="card-grid">
+<div class="card-grid">
 
-            <div class="card">
-                <h3>Project Title</h3>
-                <p>Description</p>
-                <button class="btn">View</button>
-            </div>
+<div class="card">
 
-            <div class="card">
-                <h3>Project Title</h3>
-                <p>Description</p>
-                <button class="btn">View</button>
-            </div>
+<h3>Project Name</h3>
 
-        </div>
+<p>Description</p>
 
-    </div>
+<button class="btn">View</button>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -285,16 +294,21 @@
 
 <section id="internships">
 
-    <h2>Internships</h2>
+<h2>Internships</h2>
 
-    <div class="container">
+<div class="container">
 
-        <div class="card">
-            <h3>Company Name</h3>
-            <p>Role description</p>
-        </div>
+<div class="card">
 
-    </div>
+<h3>Company Name</h3>
+
+<p>Role</p>
+
+<p>Description</p>
+
+</div>
+
+</div>
 
 </section>
 
@@ -303,16 +317,19 @@
 
 <section id="events">
 
-    <h2>Events</h2>
+<h2>Events</h2>
 
-    <div class="container">
+<div class="container">
 
-        <div class="card">
-            <h3>Event Name</h3>
-            <p>Description</p>
-        </div>
+<div class="card">
 
-    </div>
+<h3>Event Name</h3>
+
+<p>Description</p>
+
+</div>
+
+</div>
 
 </section>
 
@@ -321,19 +338,34 @@
 
 <section id="contact">
 
-    <h2>Contact</h2>
+<h2>Contact</h2>
 
-    <div class="contact-form">
+<div class="contact-info">
 
-        <input type="text" placeholder="Your Name"><br>
+<p>Email: your@email.com</p>
 
-        <input type="email" placeholder="Your Email"><br>
+<p>Phone: +91 XXXXX XXXXX</p>
 
-        <textarea placeholder="Message"></textarea><br>
+<p>Location: Your City, Country</p>
 
-        <button class="btn">Send</button>
+</div>
 
-    </div>
+
+<div class="contact-form">
+
+<input type="text" placeholder="Name"><br>
+
+<input type="email" placeholder="Email"><br>
+
+<textarea placeholder="Message"></textarea><br>
+
+<a href="mailto:your@email.com">
+
+<button class="btn">Send Email</button>
+
+</a>
+
+</div>
 
 </section>
 
@@ -342,19 +374,19 @@
 
 <section id="social">
 
-    <h2>Social Media</h2>
+<h2>Social Media</h2>
 
-    <div class="social-buttons">
+<div class="social-buttons">
 
-        <button class="btn">GitHub</button>
+<button class="btn">GitHub</button>
 
-        <button class="btn">LinkedIn</button>
+<button class="btn">LinkedIn</button>
 
-        <button class="btn">Resume</button>
+<button class="btn">Resume</button>
 
-        <button class="btn">Email</button>
+<button class="btn">Email</button>
 
-    </div>
+</div>
 
 </section>
 
@@ -363,10 +395,9 @@
 
 <footer>
 
-    © 2026 Your Name | Portfolio
+© 2026 Your Name | Portfolio
 
 </footer>
-
 
 </body>
 </html>
