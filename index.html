@@ -13,7 +13,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: "Segoe UI", system-ui, sans-serif;
+font-family:"Segoe UI", system-ui, sans-serif;
 scroll-behavior:smooth;
 }
 
@@ -41,7 +41,7 @@ nav{
 position:fixed;
 width:100%;
 top:0;
-background:rgba(2,6,23,0.75);
+background:rgba(2,6,23,0.8);
 backdrop-filter:blur(10px);
 display:flex;
 justify-content:space-between;
@@ -116,64 +116,25 @@ box-shadow:0 0 15px rgba(56,189,248,0.4);
 transform:translateY(-3px);
 }
 
-.button-group{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-/* ================= GRID ================= */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
-.card{
-background:rgba(15,23,42,0.6);
-border:1px solid rgba(56,189,248,0.2);
-border-radius:12px;
-padding:25px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-border-color:#38bdf8;
-box-shadow:0 0 20px rgba(56,189,248,0.2);
-}
-
-.card h3{
-color:#38bdf8;
-margin-bottom:10px;
-}
-
-.card p{
-font-size:14px;
-opacity:0.85;
-}
-
 /* ================= TIMELINE ================= */
 
 .timeline{
-max-width:900px;
+max-width:950px;
 margin:auto;
 }
 
 .timeline-item{
 background:rgba(15,23,42,0.6);
 border-left:3px solid #38bdf8;
-padding:20px 25px;
-margin-bottom:25px;
-border-radius:8px;
+padding:22px 28px;
+margin-bottom:30px;
+border-radius:10px;
 transition:.3s;
 }
 
 .timeline-item:hover{
-transform:translateX(5px);
-box-shadow:0 0 15px rgba(56,189,248,0.2);
+transform:translateX(6px);
+box-shadow:0 0 20px rgba(56,189,248,0.2);
 }
 
 .timeline-item h3{
@@ -184,7 +145,7 @@ margin-bottom:5px;
 .meta{
 font-size:13px;
 opacity:0.7;
-margin-bottom:10px;
+margin-bottom:12px;
 }
 
 /* ================= CONTACT ================= */
@@ -226,7 +187,6 @@ opacity:0.7;
 <div class="logo">TUSHAR N</div>
 <div class="nav-links">
 <a href="#education">Education</a>
-<a href="#projects">Projects</a>
 <a href="#events">Events</a>
 <a href="#contact">Contact</a>
 </div>
@@ -239,11 +199,7 @@ opacity:0.7;
 <h1>Tushar N</h1>
 <p>Embedded Systems | Hardware Design | Robotics | IoT</p>
 
-<div class="button-group">
-<button class="btn" onclick="location.href='#projects'">View Projects</button>
-<button class="btn" onclick="location.href='#events'">Hackathons</button>
-<button class="btn" onclick="location.href='#contact'">Contact Me</button>
-</div>
+<button class="btn" onclick="location.href='#events'">View Hackathons & Events</button>
 
 </section>
 
@@ -253,70 +209,79 @@ opacity:0.7;
 <h2>Education</h2>
 
 <div class="timeline">
-
 <div class="timeline-item">
 <h3>B.E. Electronics & Communication Engineering</h3>
 <p class="meta">Sahyadri College of Engineering & Management</p>
 </div>
-
-</div>
-</section>
-
-<!-- ================= PROJECTS ================= -->
-
-<section id="projects">
-<h2>Key Projects</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Elderion-X</h3>
-<p>Offline-first elder-care system integrating wearable device and smart hub for fall detection, medication reminders, and caregiver alerts.</p>
 </div>
 
-<div class="card">
-<h3>Smart Inventory Management</h3>
-<p>Hardware-software integrated system for shelf monitoring with offline support and stock alert automation.</p>
-</div>
-
-<div class="card">
-<h3>AI Smart Home Automation</h3>
-<p>IoT-based automation and security system integrating AI, ML, and cloud connectivity.</p>
-</div>
-
-</div>
 </section>
 
 <!-- ================= EVENTS ================= -->
 
 <section id="events">
-<h2>Events & Hackathons</h2>
+<h2>Hackathons & Technical Events</h2>
 
 <div class="timeline">
 
 <div class="timeline-item">
 <h3>Smart India Hackathon 2025 — Elderion-X</h3>
-<p class="meta">MIC, AICTE, i4C | Sept 2025</p>
+<p class="meta">MIC, AICTE & i4C | September 2025</p>
+<p>Developed an offline-first elder-care system integrating wearable devices and a smart hub for fall detection, medication reminders, and caregiver alerts.</p>
+</div>
+
+<div class="timeline-item">
+<h3>MSME Hackathon 5.0 — Internal Selection</h3>
+<p class="meta">Ministry of MSME, Government of India | August 2025</p>
+<p>Selected in college internal rounds and presented an industry-relevant innovative solution.</p>
+</div>
+
+<div class="timeline-item">
+<h3>MIT Research Conclave 2025</h3>
+<p class="meta">Manipal Institute of Technology | July 2025</p>
+<p>Represented ECE department and engaged in technical research discussions.</p>
 </div>
 
 <div class="timeline-item">
 <h3>Skill Sangam — Top 9</h3>
 <p class="meta">TCE | June 2025</p>
+<p>Built a smart inventory management system integrating hardware and offline data tracking.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Mini Marvels IoT Exhibition</h3>
+<p class="meta">Sahyadri College | December 2024</p>
+<p>Presented AI-powered smart home automation and security system.</p>
 </div>
 
 <div class="timeline-item">
 <h3>Robo Soccer — 3rd Place</h3>
-<p class="meta">Shree Devi Institute | Dec 2024</p>
+<p class="meta">Shree Devi Institute | December 2024</p>
+<p>Secured third place in robotics competition involving real-time robot control and system integration.</p>
 </div>
 
 <div class="timeline-item">
 <h3>HackHarbor 2.0 — Top 30</h3>
-<p class="meta">SOSC | Sept 2024</p>
+<p class="meta">SOSC | September 2024</p>
+<p>Focused on hardware development, rapid prototyping, and system design.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Smart India Hackathon 2024 — Internal Selection</h3>
+<p class="meta">MIC, AICTE & i4C | September 2024</p>
+<p>Developed Women Safety Analytics and AI-based chatbot solution.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Hidden Leaf Hackathon</h3>
+<p class="meta">DEV HIVE | July 2024</p>
+<p>Built hardware solution within two hours under extreme time constraints.</p>
 </div>
 
 <div class="timeline-item">
 <h3>Socio Vision — Top 10</h3>
 <p class="meta">TCE | May 2024</p>
+<p>Developed and presented an innovative solution securing a Top 10 position.</p>
 </div>
 
 </div>
@@ -342,7 +307,6 @@ opacity:0.7;
 </div>
 
 </div>
-
 </section>
 
 <footer>
