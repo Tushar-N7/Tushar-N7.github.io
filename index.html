@@ -6,42 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        /* RESET */
+
+        /* ===== GLOBAL ===== */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
             background-color: #0f172a;
             color: #e2e8f0;
-            line-height: 1.6;
         }
 
-        /* NAVBAR */
+        section {
+            padding: 80px 20px;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #38bdf8;
+            margin-bottom: 40px;
+        }
+
+        /* ===== NAVBAR ===== */
+
         nav {
             background: #020617;
-            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 15px 40px;
             position: sticky;
             top: 0;
+            z-index: 1000;
         }
 
-        nav h2 {
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
             color: #38bdf8;
         }
 
-        nav ul {
+        .nav-links {
             list-style: none;
             display: flex;
             gap: 20px;
         }
 
-        nav ul li a {
+        .nav-links a {
             text-decoration: none;
             color: #e2e8f0;
             padding: 8px 15px;
@@ -49,12 +69,13 @@
             transition: 0.3s;
         }
 
-        nav ul li a:hover {
+        .nav-links a:hover {
             background: #38bdf8;
             color: black;
         }
 
-        /* HERO SECTION */
+        /* ===== HERO ===== */
+
         .hero {
             height: 90vh;
             display: flex;
@@ -66,50 +87,47 @@
 
         .hero h1 {
             font-size: 48px;
-            margin-bottom: 10px;
         }
 
         .hero p {
             font-size: 20px;
-            margin-bottom: 20px;
+            margin: 10px 0 20px 0;
+        }
+
+        /* ===== BUTTONS ===== */
+
+        .main-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
         }
 
         .btn {
+            background: #020617;
+            color: #38bdf8;
+            border: 2px solid #38bdf8;
             padding: 12px 25px;
-            margin: 5px;
-            border: none;
-            border-radius: 5px;
-            background: #38bdf8;
-            color: black;
-            cursor: pointer;
             font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
             transition: 0.3s;
         }
 
         .btn:hover {
-            background: #0ea5e9;
+            background: #38bdf8;
+            color: black;
+            transform: translateY(-3px);
         }
 
-        /* SECTION */
-        section {
-            padding: 60px 40px;
-        }
+        /* ===== CARDS ===== */
 
-        section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #38bdf8;
-        }
-
-        /* ABOUT */
-        .about {
-            max-width: 800px;
+        .container {
+            max-width: 1000px;
             margin: auto;
-            text-align: center;
         }
 
-        /* PROJECTS */
-        .projects {
+        .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
@@ -124,25 +142,13 @@
 
         .card:hover {
             transform: translateY(-5px);
-            background: #0f172a;
-        }
-
-        /* SKILLS */
-        .skills {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .skill {
             background: #020617;
-            padding: 10px 20px;
-            border-radius: 5px;
+            border: 1px solid #38bdf8;
         }
 
-        /* CONTACT */
-        .contact {
+        /* ===== CONTACT ===== */
+
+        .contact-form {
             text-align: center;
         }
 
@@ -155,10 +161,20 @@
         }
 
         textarea {
-            height: 100px;
+            height: 120px;
         }
 
-        /* FOOTER */
+        /* ===== SOCIAL ===== */
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
+
         footer {
             background: #020617;
             text-align: center;
@@ -166,101 +182,152 @@
             margin-top: 40px;
         }
 
-        /* MOBILE */
+        /* ===== MOBILE ===== */
+
         @media(max-width: 600px) {
+
             .hero h1 {
                 font-size: 32px;
             }
 
             nav {
                 flex-direction: column;
+                gap: 10px;
             }
+
         }
 
     </style>
+
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- ===== NAVBAR ===== -->
+
 <nav>
-    <h2>Your Name</h2>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Contact</a></li>
+
+    <div class="logo">Your Name</div>
+
+    <ul class="nav-links">
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#projects">Projects</a></li>
+
+        <li><a href="#internships">Internships</a></li>
+
+        <li><a href="#events">Events</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+        <li><a href="#social">Social</a></li>
+
     </ul>
+
 </nav>
 
-<!-- HERO -->
-<div class="hero">
+
+<!-- ===== HERO SECTION ===== -->
+
+<section id="home" class="hero">
+
     <h1>Your Name</h1>
-    <p>Your Title / Role</p>
 
-    <button class="btn">View Projects</button>
-    <button class="btn">Contact Me</button>
-</div>
+    <p>Your Role / Title</p>
 
-<!-- ABOUT -->
-<section>
-    <h2>About Me</h2>
-    <div class="about">
-        <p>
-            <!-- Your about text here -->
-        </p>
+    <div class="main-buttons">
+
+        <button class="btn" onclick="location.href='#projects'">Projects</button>
+
+        <button class="btn" onclick="location.href='#internships'">Internships</button>
+
+        <button class="btn" onclick="location.href='#events'">Events</button>
+
+        <button class="btn" onclick="location.href='#contact'">Contact</button>
+
+        <button class="btn" onclick="location.href='#social'">Social Media</button>
+
     </div>
+
 </section>
 
-<!-- PROJECTS -->
-<section>
+
+<!-- ===== PROJECTS ===== -->
+
+<section id="projects">
+
     <h2>Projects</h2>
 
-    <div class="projects">
+    <div class="container">
 
-        <div class="card">
-            <h3>Project 1</h3>
-            <p>Description</p>
-            <button class="btn">View</button>
+        <div class="card-grid">
+
+            <div class="card">
+                <h3>Project Title</h3>
+                <p>Description</p>
+                <button class="btn">View</button>
+            </div>
+
+            <div class="card">
+                <h3>Project Title</h3>
+                <p>Description</p>
+                <button class="btn">View</button>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>Project 2</h3>
-            <p>Description</p>
-            <button class="btn">View</button>
-        </div>
-
-        <div class="card">
-            <h3>Project 3</h3>
-            <p>Description</p>
-            <button class="btn">View</button>
-        </div>
-
-    </div>
-</section>
-
-<!-- SKILLS -->
-<section>
-    <h2>Skills</h2>
-
-    <div class="skills">
-        <div class="skill">Skill 1</div>
-        <div class="skill">Skill 2</div>
-        <div class="skill">Skill 3</div>
-        <div class="skill">Skill 4</div>
     </div>
 
 </section>
 
-<!-- CONTACT -->
-<section>
+
+<!-- ===== INTERNSHIPS ===== -->
+
+<section id="internships">
+
+    <h2>Internships</h2>
+
+    <div class="container">
+
+        <div class="card">
+            <h3>Company Name</h3>
+            <p>Role description</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== EVENTS ===== -->
+
+<section id="events">
+
+    <h2>Events</h2>
+
+    <div class="container">
+
+        <div class="card">
+            <h3>Event Name</h3>
+            <p>Description</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== CONTACT ===== -->
+
+<section id="contact">
+
     <h2>Contact</h2>
 
-    <div class="contact">
+    <div class="contact-form">
 
-        <input type="text" placeholder="Name"><br>
+        <input type="text" placeholder="Your Name"><br>
 
-        <input type="email" placeholder="Email"><br>
+        <input type="email" placeholder="Your Email"><br>
 
         <textarea placeholder="Message"></textarea><br>
 
@@ -270,10 +337,36 @@
 
 </section>
 
-<!-- FOOTER -->
+
+<!-- ===== SOCIAL MEDIA ===== -->
+
+<section id="social">
+
+    <h2>Social Media</h2>
+
+    <div class="social-buttons">
+
+        <button class="btn">GitHub</button>
+
+        <button class="btn">LinkedIn</button>
+
+        <button class="btn">Resume</button>
+
+        <button class="btn">Email</button>
+
+    </div>
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+
 <footer>
-    <p>© 2026 Your Name</p>
+
+    © 2026 Your Name | Portfolio
+
 </footer>
+
 
 </body>
 </html>
