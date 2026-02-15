@@ -1,188 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Your Name | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Your Name | Hardware Engineer Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
 /* ===== GLOBAL ===== */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Segoe UI", system-ui, sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#0f172a;
-    color:#e2e8f0;
+background:linear-gradient(180deg,#020617,#0f172a);
+color:#e2e8f0;
 }
 
 section{
-    padding:80px 20px;
+padding:100px 8%;
 }
 
 h1,h2,h3{
-    margin-bottom:15px;
+font-weight:600;
 }
 
 h2{
-    text-align:center;
-    color:#38bdf8;
-    margin-bottom:40px;
+text-align:center;
+margin-bottom:50px;
+font-size:32px;
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 /* ===== NAVBAR ===== */
 
 nav{
-    background:#020617;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-    position:sticky;
-    top:0;
+position:fixed;
+width:100%;
+top:0;
+background:rgba(2,6,23,0.7);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+border-bottom:1px solid rgba(56,189,248,0.2);
+z-index:1000;
 }
 
 .logo{
-    font-size:22px;
-    font-weight:bold;
-    color:#38bdf8;
+font-size:20px;
+font-weight:bold;
+color:#38bdf8;
+letter-spacing:1px;
 }
 
 .nav-links{
-    list-style:none;
-    display:flex;
-    gap:20px;
+display:flex;
+gap:25px;
 }
 
 .nav-links a{
-    text-decoration:none;
-    color:#e2e8f0;
-    padding:8px 15px;
-    border-radius:5px;
+text-decoration:none;
+color:#e2e8f0;
+font-size:15px;
+transition:.3s;
 }
 
 .nav-links a:hover{
-    background:#38bdf8;
-    color:black;
+color:#38bdf8;
 }
 
 /* ===== HERO ===== */
 
 .hero{
-    height:90vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 }
 
 .hero h1{
-    font-size:48px;
+font-size:56px;
+margin-bottom:10px;
+background:linear-gradient(90deg,#38bdf8,#6366f1);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p{
-    font-size:20px;
-    margin-bottom:20px;
+font-size:20px;
+opacity:0.8;
+margin-bottom:30px;
 }
 
 /* ===== BUTTONS ===== */
 
-.main-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-    justify-content:center;
+.button-group{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
 }
 
 .btn{
-    background:#020617;
-    color:#38bdf8;
-    border:2px solid #38bdf8;
-    padding:12px 25px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
+padding:12px 26px;
+border-radius:8px;
+border:1px solid #38bdf8;
+background:transparent;
+color:#38bdf8;
+cursor:pointer;
+transition:.3s;
+font-size:15px;
 }
 
 .btn:hover{
-    background:#38bdf8;
-    color:black;
+background:#38bdf8;
+color:#020617;
+box-shadow:0 0 15px rgba(56,189,248,0.5);
+transform:translateY(-3px);
 }
 
-/* ===== CARD ===== */
+/* ===== CARD GRID ===== */
 
-.container{
-    max-width:1000px;
-    margin:auto;
-}
-
-.card-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .card{
-    background:#020617;
-    padding:20px;
-    border-radius:10px;
+background:rgba(15,23,42,0.6);
+border:1px solid rgba(56,189,248,0.2);
+border-radius:12px;
+padding:25px;
+transition:.3s;
 }
 
 .card:hover{
-    border:1px solid #38bdf8;
+transform:translateY(-6px);
+border-color:#38bdf8;
+box-shadow:0 0 20px rgba(56,189,248,0.2);
 }
 
-/* ===== CONTACT INFO ===== */
-
-.contact-info{
-    text-align:center;
-    margin-bottom:30px;
+.card h3{
+margin-bottom:10px;
+color:#38bdf8;
 }
 
-.contact-info p{
-    margin:8px;
+.card p{
+font-size:14px;
+opacity:0.8;
 }
 
-/* ===== FORM ===== */
+/* ===== EDUCATION TIMELINE STYLE ===== */
 
-.contact-form{
-    text-align:center;
+.timeline{
+max-width:700px;
+margin:auto;
 }
 
-input,textarea{
-    width:300px;
-    padding:10px;
-    margin:10px;
-    border:none;
-    border-radius:5px;
+.timeline-item{
+margin-bottom:25px;
+padding:20px;
+border-left:3px solid #38bdf8;
+background:rgba(15,23,42,0.5);
 }
 
-textarea{
-    height:120px;
+/* ===== CONTACT ===== */
+
+.contact-box{
+text-align:center;
+}
+
+.contact-box p{
+margin:6px;
+opacity:0.9;
 }
 
 /* ===== SOCIAL ===== */
 
-.social-buttons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
+.social{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-top:20px;
 }
 
 /* ===== FOOTER ===== */
 
 footer{
-    background:#020617;
-    text-align:center;
-    padding:20px;
+text-align:center;
+padding:25px;
+border-top:1px solid rgba(56,189,248,0.2);
+opacity:0.7;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:36px;
+}
+
+.nav-links{
+display:none;
+}
+
 }
 
 </style>
@@ -190,23 +225,23 @@ footer{
 </head>
 <body>
 
+
 <!-- ===== NAVBAR ===== -->
 
 <nav>
 
-<div class="logo">Your Name</div>
+<div class="logo">YOUR NAME</div>
 
-<ul class="nav-links">
+<div class="nav-links">
 
-<li><a href="#home">Home</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#internships">Internships</a></li>
-<li><a href="#events">Events</a></li>
-<li><a href="#contact">Contact</a></li>
-<li><a href="#social">Social</a></li>
+<a href="#home">Home</a>
+<a href="#education">Education</a>
+<a href="#projects">Projects</a>
+<a href="#internships">Internships</a>
+<a href="#events">Events</a>
+<a href="#contact">Contact</a>
 
-</ul>
+</div>
 
 </nav>
 
@@ -217,21 +252,15 @@ footer{
 
 <h1>Your Name</h1>
 
-<p>Your Role / Title</p>
+<p>Hardware Engineer | Embedded Systems | RF | PCB Design</p>
 
-<div class="main-buttons">
+<div class="button-group">
+
+<button class="btn" onclick="location.href='#projects'">View Projects</button>
+
+<button class="btn" onclick="location.href='#contact'">Contact Me</button>
 
 <button class="btn" onclick="location.href='#education'">Education</button>
-
-<button class="btn" onclick="location.href='#projects'">Projects</button>
-
-<button class="btn" onclick="location.href='#internships'">Internships</button>
-
-<button class="btn" onclick="location.href='#events'">Events</button>
-
-<button class="btn" onclick="location.href='#contact'">Contact</button>
-
-<button class="btn" onclick="location.href='#social'">Social Media</button>
 
 </div>
 
@@ -244,17 +273,15 @@ footer{
 
 <h2>Education</h2>
 
-<div class="container">
+<div class="timeline">
 
-<div class="card">
+<div class="timeline-item">
 
 <h3>Degree Name</h3>
 
-<p>College Name</p>
+<p>University Name</p>
 
 <p>Year</p>
-
-<p>Details</p>
 
 </div>
 
@@ -269,19 +296,15 @@ footer{
 
 <h2>Projects</h2>
 
-<div class="container">
-
-<div class="card-grid">
+<div class="grid">
 
 <div class="card">
 
-<h3>Project Name</h3>
+<h3>Project Title</h3>
 
-<p>Description</p>
+<p>Description of your project</p>
 
-<button class="btn">View</button>
-
-</div>
+<button class="btn">View Details</button>
 
 </div>
 
@@ -296,15 +319,13 @@ footer{
 
 <h2>Internships</h2>
 
-<div class="container">
+<div class="grid">
 
 <div class="card">
 
 <h3>Company Name</h3>
 
-<p>Role</p>
-
-<p>Description</p>
+<p>Role description</p>
 
 </div>
 
@@ -319,7 +340,7 @@ footer{
 
 <h2>Events</h2>
 
-<div class="container">
+<div class="grid">
 
 <div class="card">
 
@@ -340,24 +361,15 @@ footer{
 
 <h2>Contact</h2>
 
-<div class="contact-info">
+<div class="contact-box">
 
 <p>Email: your@email.com</p>
 
 <p>Phone: +91 XXXXX XXXXX</p>
 
-<p>Location: Your City, Country</p>
+<p>Location: Your City</p>
 
-</div>
-
-
-<div class="contact-form">
-
-<input type="text" placeholder="Name"><br>
-
-<input type="email" placeholder="Email"><br>
-
-<textarea placeholder="Message"></textarea><br>
+<br>
 
 <a href="mailto:your@email.com">
 
@@ -365,18 +377,7 @@ footer{
 
 </a>
 
-</div>
-
-</section>
-
-
-<!-- ===== SOCIAL MEDIA ===== -->
-
-<section id="social">
-
-<h2>Social Media</h2>
-
-<div class="social-buttons">
+<div class="social">
 
 <button class="btn">GitHub</button>
 
@@ -384,7 +385,7 @@ footer{
 
 <button class="btn">Resume</button>
 
-<button class="btn">Email</button>
+</div>
 
 </div>
 
@@ -395,9 +396,10 @@ footer{
 
 <footer>
 
-© 2026 Your Name | Portfolio
+© 2026 Your Name — Hardware Engineer Portfolio
 
 </footer>
+
 
 </body>
 </html>
