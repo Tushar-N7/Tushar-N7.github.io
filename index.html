@@ -5,291 +5,171 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tushar N | Embedded Systems Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= ROOT ================= */
+/* ================= BASE ================= */
 
 :root{
---bg:#0a0f18;
---card:#111826;
---accent:#0080ff;
---accent-soft:#3399ff;
---text:#e6edf3;
---text-dim:#9aa4b2;
+--bg:#0b0f14;
+--panel:#121821;
+--border:#1f2630;
+--text:#e8eef5;
+--text-dim:#9aa6b2;
+--accent:#2f81f7;
 }
 
 *{
+box-sizing:border-box;
 margin:0;
 padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
 }
 
 body{
-font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;
+font-family:"Inter",sans-serif;
 background:var(--bg);
 color:var(--text);
-overflow-x:hidden;
-transition:background 0.6s ease;
-}
-
-/* PAGE FADE IN */
-
-body{
-animation:fadeInPage 1s ease;
-}
-
-@keyframes fadeInPage{
-from{opacity:0;}
-to{opacity:1;}
 }
 
 /* ================= NAV ================= */
 
 nav{
 position:fixed;
+top:0;
 width:100%;
-padding:18px 10%;
+background:var(--bg);
+border-bottom:1px solid var(--border);
+padding:16px 32px;
 display:flex;
 justify-content:space-between;
-background:rgba(10,15,24,0.7);
-backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(255,255,255,0.05);
-z-index:1000;
+align-items:center;
+}
+
+.logo{
+font-weight:600;
 }
 
 nav a{
 color:var(--text-dim);
 text-decoration:none;
-margin-left:25px;
+margin-left:24px;
 font-size:14px;
-position:relative;
-transition:0.3s;
-}
-
-nav a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-5px;
-width:0%;
-height:2px;
-background:var(--accent);
-transition:0.3s;
 }
 
 nav a:hover{
 color:var(--accent);
 }
 
-nav a:hover::after{
-width:100%;
+/* ================= LAYOUT ================= */
+
+.container{
+display:grid;
+grid-template-columns:260px 1fr;
+margin-top:60px;
+min-height:100vh;
 }
 
-/* ================= HERO ================= */
+/* ================= SIDEBAR ================= */
 
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 10%;
+.sidebar{
+border-right:1px solid var(--border);
+padding:32px;
 }
 
-.hero-left{
-max-width:600px;
-animation:slideUp 1.2s ease;
+.name{
+font-size:20px;
+font-weight:600;
+margin-bottom:6px;
 }
 
-@keyframes slideUp{
-from{opacity:0; transform:translateY(40px);}
-to{opacity:1; transform:translateY(0);}
-}
-
-.hero h1{
-font-size:64px;
-font-weight:700;
-background:linear-gradient(90deg,#ffffff,var(--accent));
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-margin-bottom:15px;
-}
-
-.hero p{
-color:var(--text-dim);
-font-size:18px;
-margin-bottom:35px;
-}
-
-/* Animated Orb */
-
-.orb{
-width:400px;
-height:400px;
-background:radial-gradient(circle,var(--accent),transparent 70%);
-border-radius:50%;
-filter:blur(70px);
-animation:float 6s infinite ease-in-out;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-40px);}
-}
-
-/* ================= BUTTONS ================= */
-
-.buttons{
-display:flex;
-gap:20px;
-}
-
-.btn{
-padding:14px 30px;
-border-radius:50px;
+.role{
 font-size:14px;
-text-decoration:none;
-position:relative;
-overflow:hidden;
-transition:0.3s;
+color:var(--text-dim);
+margin-bottom:30px;
+}
+
+.sidebar button{
+width:100%;
+padding:10px;
+margin-bottom:10px;
+background:none;
+border:1px solid var(--border);
+color:var(--text);
 cursor:pointer;
+text-align:left;
 }
 
-.primary{
-background:linear-gradient(90deg,var(--accent),var(--accent-soft));
-color:white;
-box-shadow:0 0 20px rgba(0,128,255,0.3);
-}
-
-.primary:hover{
-transform:translateY(-4px);
-box-shadow:0 0 40px rgba(0,128,255,0.6);
-}
-
-.secondary{
-border:1px solid rgba(0,128,255,0.5);
+.sidebar button:hover{
+border-color:var(--accent);
 color:var(--accent);
 }
 
-.secondary:hover{
-background:rgba(0,128,255,0.1);
+/* ================= MAIN ================= */
+
+main{
+padding:40px;
+max-width:900px;
 }
 
-/* Ripple Effect */
-
-.btn::after{
-content:"";
-position:absolute;
-width:0;
-height:0;
-background:rgba(255,255,255,0.4);
-border-radius:50%;
-transform:translate(-50%,-50%);
-pointer-events:none;
-}
-
-.btn:active::after{
-width:200px;
-height:200px;
-transition:0.4s;
-opacity:0;
-}
-
-/* ================= SECTIONS ================= */
+/* ================= SECTION ================= */
 
 section{
-padding:120px 10%;
-max-width:1100px;
-margin:auto;
-opacity:0;
-transform:translateY(60px);
-transition:1s;
-}
-
-section.active{
-opacity:1;
-transform:translateY(0);
+margin-bottom:60px;
 }
 
 h2{
-font-size:38px;
-margin-bottom:50px;
-}
-
-/* ================= CARD ================= */
-
-.card{
-background:var(--card);
-padding:25px;
-border-radius:14px;
+font-size:18px;
 margin-bottom:20px;
-border:1px solid rgba(255,255,255,0.05);
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-8px) scale(1.02);
-border-color:var(--accent);
-box-shadow:0 0 25px rgba(0,128,255,0.3);
-}
-
-/* ================= TIMELINE ================= */
-
-.timeline{
-border-left:2px solid rgba(0,128,255,0.3);
-padding-left:20px;
-}
-
-.timeline-item{
-margin-bottom:25px;
-position:relative;
-transition:0.4s;
-}
-
-.timeline-item:hover{
 color:var(--accent);
-transform:translateX(5px);
 }
 
-.timeline-item::before{
-content:"";
-position:absolute;
-left:-11px;
-top:6px;
-width:14px;
-height:14px;
-background:var(--accent);
-border-radius:50%;
-box-shadow:0 0 15px var(--accent);
+/* ================= ITEMS ================= */
+
+.item{
+padding:16px;
+border:1px solid var(--border);
+margin-bottom:10px;
+}
+
+.item:hover{
+border-color:var(--accent);
+}
+
+.item-title{
+font-weight:500;
+}
+
+.item-sub{
+font-size:14px;
+color:var(--text-dim);
+margin-top:4px;
 }
 
 /* ================= CONTACT ================= */
 
-.contact p{
-margin-bottom:10px;
+.contact{
+font-size:14px;
 color:var(--text-dim);
 }
 
-/* ================= FOOTER ================= */
-
-footer{
-text-align:center;
-padding:40px;
-color:var(--text-dim);
+.contact div{
+margin-bottom:6px;
 }
 
 /* ================= RESPONSIVE ================= */
 
 @media(max-width:900px){
-.hero{
-flex-direction:column;
-text-align:center;
+
+.container{
+grid-template-columns:1fr;
 }
-.orb{
-margin-top:40px;
+
+.sidebar{
+border-right:none;
+border-bottom:1px solid var(--border);
 }
+
 }
 
 </style>
@@ -297,7 +177,7 @@ margin-top:40px;
 <body>
 
 <nav>
-<div><strong>Tushar N</strong></div>
+<div class="logo">Tushar N</div>
 <div>
 <a href="#education">Education</a>
 <a href="#internships">Internships</a>
@@ -307,78 +187,150 @@ margin-top:40px;
 </div>
 </nav>
 
-<div class="hero">
-<div class="hero-left">
-<h1>Tushar N</h1>
-<p>Embedded Systems Engineer focused on RF communication, PCB design, and intelligent hardware systems.</p>
-<div class="buttons">
-<a href="#projects" class="btn primary">View Projects</a>
-<a href="#contact" class="btn secondary">Contact</a>
-</div>
-</div>
-<div class="orb"></div>
+<div class="container">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="name">Tushar N</div>
+
+<div class="role">
+Embedded Systems Engineer  
+RF • PCB • Hardware Systems
 </div>
 
+<button onclick="scrollToSection('education')">Education</button>
+<button onclick="scrollToSection('internships')">Internships</button>
+<button onclick="scrollToSection('events')">Events</button>
+<button onclick="scrollToSection('projects')">Projects</button>
+<button onclick="scrollToSection('contact')">Contact</button>
+
+</div>
+
+<!-- MAIN -->
+
+<main>
+
 <section id="education">
+
 <h2>Education</h2>
-<div class="card">
-B.E. Electronics and Communication Engineering<br>
+
+<div class="item">
+<div class="item-title">
+B.E. Electronics and Communication Engineering
+</div>
+<div class="item-sub">
 Sahyadri College of Engineering and Management
 </div>
+</div>
+
 </section>
 
 <section id="internships">
+
 <h2>Internships</h2>
-<div class="timeline">
-<div class="timeline-item">Aarvath Mobitech Private Limited</div>
-<div class="timeline-item">RDL Technologies</div>
+
+<div class="item">
+<div class="item-title">
+Aarvath Mobitech Private Limited
 </div>
+<div class="item-sub">
+Embedded systems and solar vehicle electronics
+</div>
+</div>
+
+<div class="item">
+<div class="item-title">
+RDL Technologies
+</div>
+<div class="item-sub">
+KNX transceiver research and PCB schematic analysis
+</div>
+</div>
+
 </section>
 
 <section id="events">
+
 <h2>Events & Hackathons</h2>
-<div class="timeline">
-<div class="timeline-item">Socio Vision — Top 10</div>
-<div class="timeline-item">HackHarbor 2.0 — Top 30</div>
-<div class="timeline-item">Robo Soccer — 3rd Place</div>
-<div class="timeline-item">Skill Sangam — Top 9</div>
-<div class="timeline-item">Smart India Hackathon</div>
-<div class="timeline-item">MSME Hackathon 5.0</div>
-<div class="timeline-item">MIT Research Conclave</div>
+
+<div class="item">
+<div class="item-title">Socio Vision</div>
+<div class="item-sub">Top 10 Finish</div>
 </div>
+
+<div class="item">
+<div class="item-title">HackHarbor 2.0</div>
+<div class="item-sub">Top 30 Finish</div>
+</div>
+
+<div class="item">
+<div class="item-title">Robo Soccer</div>
+<div class="item-sub">3rd Place</div>
+</div>
+
+<div class="item">
+<div class="item-title">Skill Sangam Hackathon</div>
+<div class="item-sub">Top 9 Finish</div>
+</div>
+
+<div class="item">
+<div class="item-title">Smart India Hackathon</div>
+<div class="item-sub">Team Jarvis</div>
+</div>
+
+<div class="item">
+<div class="item-title">MSME Hackathon 5.0</div>
+<div class="item-sub">Internal Selection</div>
+</div>
+
+<div class="item">
+<div class="item-title">MIT Research Conclave</div>
+<div class="item-sub">Research Representation</div>
+</div>
+
 </section>
 
 <section id="projects">
+
 <h2>Projects</h2>
-<div class="card">
-Your embedded systems and hardware projects will appear here.
+
+<div class="item">
+<div class="item-title">
+Projects will be added here
 </div>
+</div>
+
 </section>
 
 <section id="contact">
+
 <h2>Contact</h2>
+
 <div class="contact">
-<p>Phone: 9632253513</p>
-<p>Email: tusharn2534@gmail.com</p>
+
+<div>Phone: 9632253513</div>
+
+<div>Email: tusharn2534@gmail.com</div>
+
 </div>
+
 </section>
 
-<footer>
-© 2026 Tushar N — Embedded Systems Engineer
-</footer>
+</main>
+
+</div>
 
 <script>
 
-/* Scroll Reveal */
-function revealSections(){
-document.querySelectorAll("section").forEach(sec=>{
-if(sec.getBoundingClientRect().top < window.innerHeight-100){
-sec.classList.add("active");
-}
+function scrollToSection(id){
+
+document.getElementById(id).scrollIntoView({
+behavior:"smooth"
 });
+
 }
-window.addEventListener("scroll",revealSections);
-revealSections();
 
 </script>
 
