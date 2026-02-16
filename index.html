@@ -3,315 +3,453 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tushar N | Embedded & Hardware Engineer</title>
+
+<title>Tushar N | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= GLOBAL ================= */
+/* ========================= */
+/* Apple-Level Minimal Theme */
+/* ========================= */
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:"Segoe UI", system-ui, sans-serif;
-scroll-behavior:smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-background:linear-gradient(180deg,#020617,#0f172a);
-color:#e2e8f0;
+html {
+    scroll-behavior: smooth;
 }
 
-section{
-padding:100px 8%;
+body {
+
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+
+    background: #ffffff;
+    color: #111;
+
+    line-height: 1.6;
+
 }
 
-h2{
-text-align:center;
-margin-bottom:60px;
-font-size:32px;
-background:linear-gradient(90deg,#38bdf8,#6366f1);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+/* ========================= */
+/* Navigation */
+/* ========================= */
+
+nav {
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+
+    padding: 18px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+
+    z-index: 1000;
 }
 
-/* ================= NAVBAR ================= */
-
-nav{
-position:fixed;
-width:100%;
-top:0;
-background:rgba(2,6,23,0.8);
-backdrop-filter:blur(10px);
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 8%;
-border-bottom:1px solid rgba(56,189,248,0.2);
-z-index:1000;
+.logo {
+    font-weight: 600;
+    font-size: 18px;
 }
 
-.logo{
-font-weight:bold;
-color:#38bdf8;
-letter-spacing:1px;
+.nav-links a {
+
+    margin-left: 25px;
+    text-decoration: none;
+    color: #333;
+
+    font-size: 14px;
 }
 
-.nav-links{
-display:flex;
-gap:25px;
+.nav-links a:hover {
+    color: black;
 }
 
-.nav-links a{
-text-decoration:none;
-color:#e2e8f0;
-font-size:14px;
-transition:.3s;
+/* ========================= */
+/* Hero */
+/* ========================= */
+
+.hero {
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
 }
 
-.nav-links a:hover{
-color:#38bdf8;
+.hero h1 {
+
+    font-size: 52px;
+    font-weight: 600;
+
+    margin-bottom: 10px;
+
 }
 
-/* ================= HERO ================= */
+.hero p {
 
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+    font-size: 18px;
+    color: #666;
+
 }
 
-.hero h1{
-font-size:56px;
-margin-bottom:10px;
-background:linear-gradient(90deg,#38bdf8,#6366f1);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+/* ========================= */
+/* Sections */
+/* ========================= */
+
+section {
+
+    max-width: 900px;
+    margin: auto;
+
+    padding: 120px 20px;
+
 }
 
-.hero p{
-font-size:20px;
-opacity:0.8;
-margin-bottom:30px;
+section h2 {
+
+    font-size: 32px;
+    font-weight: 600;
+
+    margin-bottom: 40px;
+
 }
 
-.btn{
-padding:12px 28px;
-border-radius:8px;
-border:1px solid #38bdf8;
-background:transparent;
-color:#38bdf8;
-cursor:pointer;
-transition:.3s;
-font-size:14px;
+/* ========================= */
+/* Cards */
+/* ========================= */
+
+.card {
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+
+    background: white;
+
 }
 
-.btn:hover{
-background:#38bdf8;
-color:#020617;
-box-shadow:0 0 15px rgba(56,189,248,0.4);
-transform:translateY(-3px);
+.card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+
 }
 
-/* ================= TIMELINE ================= */
+/* ========================= */
+/* Contact */
+/* ========================= */
 
-.timeline{
-max-width:950px;
-margin:auto;
+.contact {
+
+    text-align: center;
+
 }
 
-.timeline-item{
-background:rgba(15,23,42,0.6);
-border-left:3px solid #38bdf8;
-padding:22px 28px;
-margin-bottom:30px;
-border-radius:10px;
-transition:.3s;
+.contact p {
+
+    margin: 8px 0;
+
+    color: #444;
+
 }
 
-.timeline-item:hover{
-transform:translateX(6px);
-box-shadow:0 0 20px rgba(56,189,248,0.2);
+.social a {
+
+    margin: 0 10px;
+
+    text-decoration: none;
+
+    color: black;
+
+    font-weight: 500;
+
 }
 
-.timeline-item h3{
-color:#38bdf8;
-margin-bottom:5px;
+/* ========================= */
+/* Footer */
+/* ========================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: #888;
+
+    font-size: 14px;
+
 }
 
-.meta{
-font-size:13px;
-opacity:0.7;
-margin-bottom:12px;
+/* ========================= */
+/* Reveal Animation */
+/* ========================= */
+
+.reveal {
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+
 }
 
-/* ================= CONTACT ================= */
+.reveal.active {
 
-.contact-box{
-text-align:center;
+    opacity: 1;
+    transform: translateY(0);
+
 }
 
-.social{
-margin-top:20px;
-display:flex;
-gap:15px;
-justify-content:center;
-flex-wrap:wrap;
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media(max-width: 600px){
+
+.hero h1 {
+    font-size: 34px;
 }
 
-/* ================= FOOTER ================= */
-
-footer{
-text-align:center;
-padding:30px;
-border-top:1px solid rgba(56,189,248,0.2);
-opacity:0.7;
+nav {
+    padding: 15px;
 }
 
-@media(max-width:768px){
-.hero h1{font-size:36px;}
-.nav-links{display:none;}
 }
 
 </style>
-</head>
 
+</head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- Navigation -->
 
 <nav>
-<div class="logo">TUSHAR N</div>
+
+<div class="logo">Tushar N</div>
+
 <div class="nav-links">
+
 <a href="#education">Education</a>
+<a href="#internships">Internships</a>
 <a href="#events">Events</a>
+<a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
+
 </div>
+
 </nav>
 
-<!-- ================= HERO ================= -->
 
-<section class="hero">
+<!-- Hero -->
 
-<h1>Tushar N</h1>
-<p>Embedded Systems | Hardware Design | Robotics | IoT</p>
+<div class="hero">
 
-<button class="btn" onclick="location.href='#events'">View Hackathons & Events</button>
+<h1 class="reveal">Tushar N</h1>
 
-</section>
+<p class="reveal">
+Embedded Systems • Hardware • RF • PCB Design
+</p>
 
-<!-- ================= EDUCATION ================= -->
+</div>
+
+
+<!-- Education -->
 
 <section id="education">
-<h2>Education</h2>
 
-<div class="timeline">
-<div class="timeline-item">
-<h3>B.E. Electronics & Communication Engineering</h3>
-<p class="meta">Sahyadri College of Engineering & Management</p>
-</div>
+<h2 class="reveal">Education</h2>
+
+<div class="card reveal">
+
+<h3>B.E. Electronics and Communication Engineering</h3>
+
+<p>Sahyadri College of Engineering and Management</p>
+
 </div>
 
 </section>
 
-<!-- ================= EVENTS ================= -->
+
+<!-- Internships -->
+
+<section id="internships">
+
+<h2 class="reveal">Internships</h2>
+
+<div class="card reveal">
+
+<h3>Aarvath Mobitech Private Limited</h3>
+
+<p>
+Worked on solar-powered vehicle electronics, including custom battery
+charge and discharge controllers, embedded systems integration,
+and hardware design.
+</p>
+
+</div>
+
+<div class="card reveal">
+
+<h3>RDL Technologies</h3>
+
+<p>
+Worked on research and analysis of KNX TP transceiver systems for building automation,
+including schematic analysis, component selection, and PCB design support.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- Events & Hackathons -->
 
 <section id="events">
-<h2>Hackathons & Technical Events</h2>
 
-<div class="timeline">
+<h2 class="reveal">Events & Hackathons</h2>
 
-<div class="timeline-item">
-<h3>Smart India Hackathon 2025 — Elderion-X</h3>
-<p class="meta">MIC, AICTE & i4C | September 2025</p>
-<p>Developed an offline-first elder-care system integrating wearable devices and a smart hub for fall detection, medication reminders, and caregiver alerts.</p>
+<div class="card reveal">
+Socio Vision – Top 10 Finish
 </div>
 
-<div class="timeline-item">
-<h3>MSME Hackathon 5.0 — Internal Selection</h3>
-<p class="meta">Ministry of MSME, Government of India | August 2025</p>
-<p>Selected in college internal rounds and presented an industry-relevant innovative solution.</p>
+<div class="card reveal">
+Hidden Leaf Hackathon – Hardware Rapid Development
 </div>
 
-<div class="timeline-item">
-<h3>MIT Research Conclave 2025</h3>
-<p class="meta">Manipal Institute of Technology | July 2025</p>
-<p>Represented ECE department and engaged in technical research discussions.</p>
+<div class="card reveal">
+Smart India Hackathon Internal Selection – Team Jarvis
 </div>
 
-<div class="timeline-item">
-<h3>Skill Sangam — Top 9</h3>
-<p class="meta">TCE | June 2025</p>
-<p>Built a smart inventory management system integrating hardware and offline data tracking.</p>
+<div class="card reveal">
+HackHarbor 2.0 – Top 30 Finish
 </div>
 
-<div class="timeline-item">
-<h3>Mini Marvels IoT Exhibition</h3>
-<p class="meta">Sahyadri College | December 2024</p>
-<p>Presented AI-powered smart home automation and security system.</p>
+<div class="card reveal">
+Robo Soccer – 3rd Place
 </div>
 
-<div class="timeline-item">
-<h3>Robo Soccer — 3rd Place</h3>
-<p class="meta">Shree Devi Institute | December 2024</p>
-<p>Secured third place in robotics competition involving real-time robot control and system integration.</p>
+<div class="card reveal">
+Mini Marvels – AI Smart Home System Presentation
 </div>
 
-<div class="timeline-item">
-<h3>HackHarbor 2.0 — Top 30</h3>
-<p class="meta">SOSC | September 2024</p>
-<p>Focused on hardware development, rapid prototyping, and system design.</p>
+<div class="card reveal">
+Skill Sangam Hackathon – Top 9 Finish
 </div>
 
-<div class="timeline-item">
-<h3>Smart India Hackathon 2024 — Internal Selection</h3>
-<p class="meta">MIC, AICTE & i4C | September 2024</p>
-<p>Developed Women Safety Analytics and AI-based chatbot solution.</p>
+<div class="card reveal">
+MIT Research Conclave – Research Representation
 </div>
 
-<div class="timeline-item">
-<h3>Hidden Leaf Hackathon</h3>
-<p class="meta">DEV HIVE | July 2024</p>
-<p>Built hardware solution within two hours under extreme time constraints.</p>
+<div class="card reveal">
+MSME Hackathon 5.0 – Internal Selection
 </div>
 
-<div class="timeline-item">
-<h3>Socio Vision — Top 10</h3>
-<p class="meta">TCE | May 2024</p>
-<p>Developed and presented an innovative solution securing a Top 10 position.</p>
+<div class="card reveal">
+Smart India Hackathon – Elderion-X System Development
 </div>
 
-</div>
 </section>
 
-<!-- ================= CONTACT ================= -->
+
+<!-- Projects (Empty for now) -->
+
+<section id="projects">
+
+<h2 class="reveal">Projects</h2>
+
+<div class="card reveal">
+Projects will be added here.
+</div>
+
+</section>
+
+
+<!-- Contact -->
 
 <section id="contact">
-<h2>Contact</h2>
 
-<div class="contact-box">
-<p>Email: your@email.com</p>
-<p>Location: Karnataka, India</p>
+<h2 class="reveal">Contact</h2>
 
-<a href="mailto:your@email.com">
-<button class="btn">Send Email</button>
-</a>
+<div class="contact reveal">
+
+<p>Phone: 9632253513</p>
+
+<p>Email: tusharn2534@gmail.com</p>
 
 <div class="social">
-<button class="btn">GitHub</button>
-<button class="btn">LinkedIn</button>
-<button class="btn">Resume</button>
+
+<a href="#">GitHub</a>
+<a href="#">LinkedIn</a>
+
 </div>
 
 </div>
+
 </section>
 
+
 <footer>
-© 2026 Tushar N — Embedded & Hardware Engineer
+
+© 2026 Tushar N
+
 </footer>
+
+
+<!-- Animation Script -->
+
+<script>
+
+function reveal() {
+
+var reveals = document.querySelectorAll(".reveal");
+
+for (var i = 0; i < reveals.length; i++) {
+
+var windowHeight = window.innerHeight;
+var elementTop = reveals[i].getBoundingClientRect().top;
+
+if (elementTop < windowHeight - 50) {
+
+reveals[i].classList.add("active");
+
+}
+
+}
+
+}
+
+window.addEventListener("scroll", reveal);
+
+reveal();
+
+</script>
+
 
 </body>
 </html>
