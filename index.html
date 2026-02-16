@@ -5,169 +5,150 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tushar N | Embedded Systems Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= BASE ================= */
-
 :root{
---bg:#0b0f14;
---panel:#121821;
---border:#1f2630;
---text:#e8eef5;
---text-dim:#9aa6b2;
---accent:#2f81f7;
+--bg:#ffffff;
+--text:#1d1d1f;
+--text-soft:#6e6e73;
+--accent:#0071e3;
+--section:#f5f5f7;
 }
 
 *{
-box-sizing:border-box;
 margin:0;
 padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-font-family:"Inter",sans-serif;
+font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;
 background:var(--bg);
 color:var(--text);
+overflow-x:hidden;
 }
 
 /* ================= NAV ================= */
 
 nav{
 position:fixed;
-top:0;
 width:100%;
-background:var(--bg);
-border-bottom:1px solid var(--border);
-padding:16px 32px;
+padding:20px 60px;
 display:flex;
 justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-weight:600;
+background:rgba(255,255,255,0.8);
+backdrop-filter:blur(20px);
+z-index:1000;
 }
 
 nav a{
-color:var(--text-dim);
 text-decoration:none;
-margin-left:24px;
+color:var(--text-soft);
+margin-left:30px;
 font-size:14px;
+transition:0.3s;
 }
 
 nav a:hover{
 color:var(--accent);
 }
 
-/* ================= LAYOUT ================= */
+/* ================= HERO ================= */
 
-.container{
-display:grid;
-grid-template-columns:260px 1fr;
-margin-top:60px;
-min-height:100vh;
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
 }
 
-/* ================= SIDEBAR ================= */
-
-.sidebar{
-border-right:1px solid var(--border);
-padding:32px;
+.hero h1{
+font-size:64px;
+font-weight:700;
+letter-spacing:-2px;
+margin-bottom:20px;
 }
 
-.name{
+.hero p{
 font-size:20px;
-font-weight:600;
-margin-bottom:6px;
-}
-
-.role{
-font-size:14px;
-color:var(--text-dim);
+color:var(--text-soft);
+max-width:700px;
 margin-bottom:30px;
 }
 
-.sidebar button{
-width:100%;
-padding:10px;
-margin-bottom:10px;
-background:none;
-border:1px solid var(--border);
-color:var(--text);
-cursor:pointer;
-text-align:left;
-}
-
-.sidebar button:hover{
-border-color:var(--accent);
+.hero .buttons a{
+margin:0 15px;
+text-decoration:none;
+font-size:16px;
 color:var(--accent);
-}
-
-/* ================= MAIN ================= */
-
-main{
-padding:40px;
-max-width:900px;
-}
-
-/* ================= SECTION ================= */
-
-section{
-margin-bottom:60px;
-}
-
-h2{
-font-size:18px;
-margin-bottom:20px;
-color:var(--accent);
-}
-
-/* ================= ITEMS ================= */
-
-.item{
-padding:16px;
-border:1px solid var(--border);
-margin-bottom:10px;
-}
-
-.item:hover{
-border-color:var(--accent);
-}
-
-.item-title{
 font-weight:500;
 }
 
-.item-sub{
-font-size:14px;
-color:var(--text-dim);
-margin-top:4px;
+.hero .buttons a:hover{
+text-decoration:underline;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+padding:120px 20px;
+text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:1s ease;
+}
+
+section.active{
+opacity:1;
+transform:translateY(0);
+}
+
+section:nth-child(even){
+background:var(--section);
+}
+
+h2{
+font-size:40px;
+margin-bottom:50px;
+font-weight:600;
+}
+
+.item{
+max-width:700px;
+margin:0 auto 25px auto;
+font-size:18px;
+color:var(--text-soft);
 }
 
 /* ================= CONTACT ================= */
 
 .contact{
-font-size:14px;
-color:var(--text-dim);
+font-size:18px;
 }
 
-.contact div{
-margin-bottom:6px;
+footer{
+text-align:center;
+padding:40px;
+color:var(--text-soft);
+font-size:14px;
 }
 
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:900px){
+@media(max-width:768px){
 
-.container{
-grid-template-columns:1fr;
+.hero h1{
+font-size:42px;
 }
 
-.sidebar{
-border-right:none;
-border-bottom:1px solid var(--border);
+h2{
+font-size:30px;
 }
 
 }
@@ -177,7 +158,7 @@ border-bottom:1px solid var(--border);
 <body>
 
 <nav>
-<div class="logo">Tushar N</div>
+<div><strong>Tushar N</strong></div>
 <div>
 <a href="#education">Education</a>
 <a href="#internships">Internships</a>
@@ -187,150 +168,113 @@ border-bottom:1px solid var(--border);
 </div>
 </nav>
 
-<div class="container">
+<!-- HERO -->
 
-<!-- SIDEBAR -->
+<div class="hero">
 
-<div class="sidebar">
+<h1>Tushar N</h1>
 
-<div class="name">Tushar N</div>
+<p>
+Embedded Systems Engineer focused on RF communication,
+PCB design, and intelligent hardware systems.
+</p>
 
-<div class="role">
-Embedded Systems Engineer  
-RF • PCB • Hardware Systems
+<div class="buttons">
+<a href="#projects">View Projects</a>
+<a href="#contact">Contact</a>
 </div>
-
-<button onclick="scrollToSection('education')">Education</button>
-<button onclick="scrollToSection('internships')">Internships</button>
-<button onclick="scrollToSection('events')">Events</button>
-<button onclick="scrollToSection('projects')">Projects</button>
-<button onclick="scrollToSection('contact')">Contact</button>
 
 </div>
 
-<!-- MAIN -->
-
-<main>
+<!-- EDUCATION -->
 
 <section id="education">
 
 <h2>Education</h2>
 
 <div class="item">
-<div class="item-title">
-B.E. Electronics and Communication Engineering
-</div>
-<div class="item-sub">
+B.E. Electronics and Communication Engineering  
 Sahyadri College of Engineering and Management
-</div>
 </div>
 
 </section>
+
+<!-- INTERNSHIPS -->
 
 <section id="internships">
 
 <h2>Internships</h2>
 
 <div class="item">
-<div class="item-title">
-Aarvath Mobitech Private Limited
-</div>
-<div class="item-sub">
-Embedded systems and solar vehicle electronics
-</div>
+Aarvath Mobitech Private Limited — Embedded systems & solar vehicle electronics
 </div>
 
 <div class="item">
-<div class="item-title">
-RDL Technologies
-</div>
-<div class="item-sub">
-KNX transceiver research and PCB schematic analysis
-</div>
+RDL Technologies — KNX transceiver research & PCB schematic analysis
 </div>
 
 </section>
+
+<!-- EVENTS -->
 
 <section id="events">
 
 <h2>Events & Hackathons</h2>
 
-<div class="item">
-<div class="item-title">Socio Vision</div>
-<div class="item-sub">Top 10 Finish</div>
-</div>
-
-<div class="item">
-<div class="item-title">HackHarbor 2.0</div>
-<div class="item-sub">Top 30 Finish</div>
-</div>
-
-<div class="item">
-<div class="item-title">Robo Soccer</div>
-<div class="item-sub">3rd Place</div>
-</div>
-
-<div class="item">
-<div class="item-title">Skill Sangam Hackathon</div>
-<div class="item-sub">Top 9 Finish</div>
-</div>
-
-<div class="item">
-<div class="item-title">Smart India Hackathon</div>
-<div class="item-sub">Team Jarvis</div>
-</div>
-
-<div class="item">
-<div class="item-title">MSME Hackathon 5.0</div>
-<div class="item-sub">Internal Selection</div>
-</div>
-
-<div class="item">
-<div class="item-title">MIT Research Conclave</div>
-<div class="item-sub">Research Representation</div>
-</div>
+<div class="item">Socio Vision — Top 10</div>
+<div class="item">HackHarbor 2.0 — Top 30</div>
+<div class="item">Robo Soccer — 3rd Place</div>
+<div class="item">Skill Sangam — Top 9</div>
+<div class="item">Smart India Hackathon</div>
+<div class="item">MSME Hackathon 5.0</div>
+<div class="item">MIT Research Conclave</div>
 
 </section>
+
+<!-- PROJECTS -->
 
 <section id="projects">
 
 <h2>Projects</h2>
 
 <div class="item">
-<div class="item-title">
-Projects will be added here
-</div>
+Project details will be added here.
 </div>
 
 </section>
+
+<!-- CONTACT -->
 
 <section id="contact">
 
 <h2>Contact</h2>
 
 <div class="contact">
-
-<div>Phone: 9632253513</div>
-
-<div>Email: tusharn2534@gmail.com</div>
-
+Phone: 9632253513  
+<br><br>
+Email: tusharn2534@gmail.com
 </div>
 
 </section>
 
-</main>
-
-</div>
+<footer>
+© 2026 Tushar N
+</footer>
 
 <script>
 
-function scrollToSection(id){
+/* Apple-style smooth reveal */
 
-document.getElementById(id).scrollIntoView({
-behavior:"smooth"
-});
-
+function revealSections(){
+document.querySelectorAll("section").forEach(section=>{
+if(section.getBoundingClientRect().top < window.innerHeight - 100){
+section.classList.add("active");
 }
+});
+}
+
+window.addEventListener("scroll", revealSections);
+revealSections();
 
 </script>
 
