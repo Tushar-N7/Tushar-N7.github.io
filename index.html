@@ -3,280 +3,309 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tushar N | Embedded Systems Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Tushar N</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-:root{
---bg:#ffffff;
---text:#1d1d1f;
---text-soft:#6e6e73;
---accent:#0071e3;
---section:#f5f5f7;
-}
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
+font-family:'Inter',sans-serif;
 }
 
 body{
-font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;
-background:var(--bg);
-color:var(--text);
-overflow-x:hidden;
-}
 
-/* ================= NAV ================= */
+background:
+radial-gradient(circle at 20% 20%, #1f2937 0%, transparent 40%),
+radial-gradient(circle at 80% 70%, #111827 0%, transparent 40%),
+#000;
 
-nav{
-position:fixed;
-width:100%;
-padding:20px 60px;
-display:flex;
-justify-content:space-between;
-background:rgba(255,255,255,0.8);
-backdrop-filter:blur(20px);
-z-index:1000;
-}
+color:white;
 
-nav a{
-text-decoration:none;
-color:var(--text-soft);
-margin-left:30px;
-font-size:14px;
-transition:0.3s;
-}
+min-height:100vh;
 
-nav a:hover{
-color:var(--accent);
-}
-
-/* ================= HERO ================= */
-
-.hero{
-height:100vh;
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
+
+padding:40px;
+
+}
+
+
+/* Header */
+
+.header{
+
 text-align:center;
-padding:0 20px;
+margin-bottom:50px;
+
+animation: fadeUp 1s ease;
+
 }
 
-.hero h1{
-font-size:64px;
-font-weight:700;
-letter-spacing:-2px;
-margin-bottom:20px;
+.header h1{
+
+font-size:48px;
+font-weight:600;
+letter-spacing:-1px;
+
 }
 
-.hero p{
-font-size:20px;
-color:var(--text-soft);
+.header p{
+
+margin-top:10px;
+font-size:18px;
+color:#9ca3af;
+
+}
+
+
+/* Buttons */
+
+.nav{
+
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+justify-content:center;
+margin-bottom:50px;
+
+animation: fadeUp 1.3s ease;
+
+}
+
+.nav button{
+
+padding:12px 26px;
+
+border-radius:999px;
+
+border:none;
+
+background:rgba(255,255,255,0.08);
+
+color:white;
+
+font-size:15px;
+
+cursor:pointer;
+
+backdrop-filter: blur(10px);
+
+transition: all 0.3s ease;
+
+}
+
+.nav button:hover{
+
+background:rgba(255,255,255,0.18);
+
+transform: translateY(-3px);
+
+}
+
+
+/* Section card */
+
+.section{
+
+width:100%;
 max-width:700px;
-margin-bottom:30px;
+
+background:rgba(255,255,255,0.05);
+
+border-radius:18px;
+
+padding:30px;
+
+display:none;
+
+backdrop-filter: blur(10px);
+
+animation: fadeUp 0.5s ease;
+
 }
 
-.hero .buttons a{
-margin:0 15px;
-text-decoration:none;
-font-size:16px;
-color:var(--accent);
+.section h2{
+
+margin-bottom:15px;
 font-weight:500;
+
 }
 
-.hero .buttons a:hover{
+.section p{
+
+color:#9ca3af;
+line-height:1.6;
+
+}
+
+
+/* Contact info */
+
+.contact-info{
+
+line-height:1.8;
+
+}
+
+.contact-info a{
+
+color:#60a5fa;
+text-decoration:none;
+
+}
+
+.contact-info a:hover{
+
 text-decoration:underline;
+
 }
 
-/* ================= SECTIONS ================= */
 
-section{
-padding:120px 20px;
-text-align:center;
+/* Animation */
+
+@keyframes fadeUp{
+
+from{
+
 opacity:0;
-transform:translateY(40px);
-transition:1s ease;
+transform:translateY(20px);
+
 }
 
-section.active{
+to{
+
 opacity:1;
 transform:translateY(0);
-}
 
-section:nth-child(even){
-background:var(--section);
-}
-
-h2{
-font-size:40px;
-margin-bottom:50px;
-font-weight:600;
-}
-
-.item{
-max-width:700px;
-margin:0 auto 25px auto;
-font-size:18px;
-color:var(--text-soft);
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-font-size:18px;
-}
-
-footer{
-text-align:center;
-padding:40px;
-color:var(--text-soft);
-font-size:14px;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:42px;
-}
-
-h2{
-font-size:30px;
 }
 
 }
 
 </style>
 </head>
+
+
 <body>
 
-<nav>
-<div><strong>Tushar N</strong></div>
-<div>
-<a href="#education">Education</a>
-<a href="#internships">Internships</a>
-<a href="#events">Events</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
 
-<!-- HERO -->
-
-<div class="hero">
+<div class="header">
 
 <h1>Tushar N</h1>
 
-<p>
-Embedded Systems Engineer focused on RF communication,
-PCB design, and intelligent hardware systems.
-</p>
-
-<div class="buttons">
-<a href="#projects">View Projects</a>
-<a href="#contact">Contact</a>
-</div>
+<p>Embedded Systems Engineer</p>
 
 </div>
 
-<!-- EDUCATION -->
 
-<section id="education">
 
-<h2>Education</h2>
+<div class="nav">
 
-<div class="item">
-B.E. Electronics and Communication Engineering  
-Sahyadri College of Engineering and Management
+<button onclick="showSection('projects')">Projects</button>
+
+<button onclick="showSection('internships')">Internships</button>
+
+<button onclick="showSection('events')">Events</button>
+
+<button onclick="showSection('education')">Education</button>
+
+<button onclick="showSection('contact')">Contact</button>
+
+<button onclick="showSection('social')">Social Media</button>
+
 </div>
 
-</section>
 
-<!-- INTERNSHIPS -->
 
-<section id="internships">
-
-<h2>Internships</h2>
-
-<div class="item">
-Aarvath Mobitech Private Limited — Embedded systems & solar vehicle electronics
-</div>
-
-<div class="item">
-RDL Technologies — KNX transceiver research & PCB schematic analysis
-</div>
-
-</section>
-
-<!-- EVENTS -->
-
-<section id="events">
-
-<h2>Events & Hackathons</h2>
-
-<div class="item">Socio Vision — Top 10</div>
-<div class="item">HackHarbor 2.0 — Top 30</div>
-<div class="item">Robo Soccer — 3rd Place</div>
-<div class="item">Skill Sangam — Top 9</div>
-<div class="item">Smart India Hackathon</div>
-<div class="item">MSME Hackathon 5.0</div>
-<div class="item">MIT Research Conclave</div>
-
-</section>
-
-<!-- PROJECTS -->
-
-<section id="projects">
+<div id="projects" class="section">
 
 <h2>Projects</h2>
 
-<div class="item">
-Project details will be added here.
+<p>Content will be added here.</p>
+
 </div>
 
-</section>
 
-<!-- CONTACT -->
+<div id="internships" class="section">
 
-<section id="contact">
+<h2>Internships</h2>
+
+<p>Aarvath Mobitech Private Limited</p>
+<p>RDL</p>
+
+</div>
+
+
+<div id="events" class="section">
+
+<h2>Events & Hackathons</h2>
+
+<p>Content will be added here.</p>
+
+</div>
+
+
+<div id="education" class="section">
+
+<h2>Education</h2>
+
+<p>Content will be added here.</p>
+
+</div>
+
+
+<div id="contact" class="section">
 
 <h2>Contact</h2>
 
-<div class="contact">
-Phone: 9632253513  
-<br><br>
+<div class="contact-info">
+
+Phone: 9632253513<br>
+
 Email: tusharn2534@gmail.com
+
 </div>
 
-</section>
+</div>
 
-<footer>
-© 2026 Tushar N
-</footer>
+
+<div id="social" class="section">
+
+<h2>Social Media</h2>
+
+<p>GitHub: </p>
+<p>LinkedIn: </p>
+
+</div>
+
+
 
 <script>
 
-/* Apple-style smooth reveal */
+function showSection(id){
 
-function revealSections(){
-document.querySelectorAll("section").forEach(section=>{
-if(section.getBoundingClientRect().top < window.innerHeight - 100){
-section.classList.add("active");
-}
+let sections=document.querySelectorAll('.section');
+
+sections.forEach(section=>{
+
+section.style.display='none';
+
 });
-}
 
-window.addEventListener("scroll", revealSections);
-revealSections();
+document.getElementById(id).style.display='block';
+
+}
 
 </script>
+
+
 
 </body>
 </html>
