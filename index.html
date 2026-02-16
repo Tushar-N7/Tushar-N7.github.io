@@ -3,453 +3,411 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tushar N | Embedded Systems Engineer</title>
 
-<title>Tushar N | Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ========================= */
-/* Apple-Level Minimal Theme */
-/* ========================= */
+/* ================= GLOBAL ================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;
+background:#0f0f0f;
+color:white;
+line-height:1.6;
+overflow-x:hidden;
 }
 
-body {
-
-    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-
-    background: #ffffff;
-    color: #111;
-
-    line-height: 1.6;
-
+section{
+padding:120px 10%;
+max-width:1200px;
+margin:auto;
 }
 
-/* ========================= */
-/* Navigation */
-/* ========================= */
-
-nav {
-
-    position: fixed;
-    top: 0;
-    width: 100%;
-
-    background: rgba(255,255,255,0.8);
-    backdrop-filter: blur(10px);
-
-    padding: 18px 40px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-
-    z-index: 1000;
+h2{
+font-size:38px;
+margin-bottom:50px;
+font-weight:600;
+letter-spacing:-1px;
 }
 
-.logo {
-    font-weight: 600;
-    font-size: 18px;
+/* ================= NAV ================= */
+
+nav{
+position:fixed;
+width:100%;
+padding:20px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(15,15,15,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
-.nav-links a {
-
-    margin-left: 25px;
-    text-decoration: none;
-    color: #333;
-
-    font-size: 14px;
+nav a{
+color:#aaa;
+margin-left:25px;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
 }
 
-.nav-links a:hover {
-    color: black;
+nav a:hover{
+color:white;
 }
 
-/* ========================= */
-/* Hero */
-/* ========================= */
+/* ================= HERO ================= */
 
-.hero {
-
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    flex-direction: column;
-
-    text-align: center;
-
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 10%;
 }
 
-.hero h1 {
-
-    font-size: 52px;
-    font-weight: 600;
-
-    margin-bottom: 10px;
-
+.hero-left{
+max-width:600px;
 }
 
-.hero p {
-
-    font-size: 18px;
-    color: #666;
-
+.hero h1{
+font-size:60px;
+font-weight:700;
+letter-spacing:-2px;
+margin-bottom:20px;
+background:linear-gradient(90deg,#ffffff,#bbbbbb);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-/* ========================= */
-/* Sections */
-/* ========================= */
-
-section {
-
-    max-width: 900px;
-    margin: auto;
-
-    padding: 120px 20px;
-
+.hero p{
+font-size:18px;
+color:#aaa;
+margin-bottom:30px;
 }
 
-section h2 {
-
-    font-size: 32px;
-    font-weight: 600;
-
-    margin-bottom: 40px;
-
+.buttons{
+display:flex;
+gap:20px;
 }
 
-/* ========================= */
-/* Cards */
-/* ========================= */
-
-.card {
-
-    padding: 25px;
-
-    margin-bottom: 20px;
-
-    border-radius: 14px;
-
-    border: 1px solid rgba(0,0,0,0.08);
-
-    transition: 0.3s;
-
-    background: white;
-
+.btn{
+padding:14px 28px;
+border-radius:50px;
+font-size:14px;
+cursor:pointer;
+transition:0.3s;
+text-decoration:none;
 }
 
-.card:hover {
-
-    transform: translateY(-4px);
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-
+.primary{
+background:white;
+color:black;
 }
 
-/* ========================= */
-/* Contact */
-/* ========================= */
-
-.contact {
-
-    text-align: center;
-
+.primary:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px rgba(255,255,255,0.2);
 }
 
-.contact p {
-
-    margin: 8px 0;
-
-    color: #444;
-
+.secondary{
+border:1px solid rgba(255,255,255,0.3);
+color:white;
 }
 
-.social a {
-
-    margin: 0 10px;
-
-    text-decoration: none;
-
-    color: black;
-
-    font-weight: 500;
-
+.secondary:hover{
+background:white;
+color:black;
 }
 
-/* ========================= */
-/* Footer */
-/* ========================= */
+/* ================= GRADIENT CIRCLE ================= */
 
-footer {
-
-    text-align: center;
-
-    padding: 40px;
-
-    color: #888;
-
-    font-size: 14px;
-
+.hero-right{
+width:400px;
+height:400px;
+background:radial-gradient(circle at center,#444,#111);
+border-radius:50%;
+filter:blur(30px);
+animation:float 6s ease-in-out infinite;
 }
 
-/* ========================= */
-/* Reveal Animation */
-/* ========================= */
-
-.reveal {
-
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 1s;
-
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
 }
 
-.reveal.active {
+/* ================= TIMELINE ================= */
 
-    opacity: 1;
-    transform: translateY(0);
-
+.timeline{
+position:relative;
+padding-left:30px;
 }
 
-/* ========================= */
-/* Responsive */
-/* ========================= */
-
-@media(max-width: 600px){
-
-.hero h1 {
-    font-size: 34px;
+.timeline::before{
+content:"";
+position:absolute;
+left:0;
+top:0;
+width:2px;
+height:100%;
+background:rgba(255,255,255,0.2);
 }
 
-nav {
-    padding: 15px;
+.timeline-item{
+margin-bottom:40px;
+position:relative;
+}
+
+.timeline-item::before{
+content:"";
+position:absolute;
+left:-9px;
+top:6px;
+width:14px;
+height:14px;
+background:white;
+border-radius:50%;
+}
+
+.timeline-item h3{
+font-size:18px;
+margin-bottom:5px;
+}
+
+.timeline-item span{
+color:#888;
+font-size:14px;
+}
+
+/* ================= CARDS ================= */
+
+.card{
+background:#1a1a1a;
+padding:30px;
+border-radius:16px;
+margin-bottom:20px;
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* ================= CONTACT ================= */
+
+.contact p{
+margin-bottom:10px;
+color:#aaa;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#666;
+font-size:14px;
+}
+
+/* ================= REVEAL ================= */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+justify-content:center;
+text-align:center;
+}
+
+.hero-right{
+margin-top:40px;
 }
 
 }
 
 </style>
-
 </head>
 <body>
 
-<!-- Navigation -->
-
 <nav>
-
-<div class="logo">Tushar N</div>
-
-<div class="nav-links">
-
+<div>Tushar N</div>
+<div>
 <a href="#education">Education</a>
 <a href="#internships">Internships</a>
 <a href="#events">Events</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
-
 </div>
-
 </nav>
 
-
-<!-- Hero -->
+<!-- HERO -->
 
 <div class="hero">
 
-<h1 class="reveal">Tushar N</h1>
+<div class="hero-left reveal">
 
-<p class="reveal">
-Embedded Systems • Hardware • RF • PCB Design
+<h1>Tushar N</h1>
+
+<p>
+Embedded Systems Engineer specializing in RF systems,
+PCB design, hardware development, and intelligent embedded solutions.
 </p>
+
+<div class="buttons">
+<a href="#projects" class="btn primary">View Projects</a>
+<a href="#contact" class="btn secondary">Contact Me</a>
+</div>
 
 </div>
 
+<div class="hero-right"></div>
 
-<!-- Education -->
+</div>
+
+<!-- EDUCATION -->
 
 <section id="education">
 
 <h2 class="reveal">Education</h2>
 
 <div class="card reveal">
-
 <h3>B.E. Electronics and Communication Engineering</h3>
-
-<p>Sahyadri College of Engineering and Management</p>
-
+<span>Sahyadri College of Engineering and Management</span>
 </div>
 
 </section>
 
-
-<!-- Internships -->
+<!-- INTERNSHIPS -->
 
 <section id="internships">
 
 <h2 class="reveal">Internships</h2>
 
-<div class="card reveal">
+<div class="timeline reveal">
 
+<div class="timeline-item">
 <h3>Aarvath Mobitech Private Limited</h3>
-
-<p>
-Worked on solar-powered vehicle electronics, including custom battery
-charge and discharge controllers, embedded systems integration,
-and hardware design.
-</p>
-
+<span>Solar-powered vehicle electronics • Battery charge/discharge controllers • Embedded systems</span>
 </div>
 
-<div class="card reveal">
-
-<h3>RDL Technologies</h3>
-
-<p>
-Worked on research and analysis of KNX TP transceiver systems for building automation,
-including schematic analysis, component selection, and PCB design support.
-</p>
+<div class="timeline-item">
+<h3>RDL</h3>
+<span>KNX TP transceiver research • Schematic analysis • PCB design support</span>
+</div>
 
 </div>
 
 </section>
 
-
-<!-- Events & Hackathons -->
+<!-- EVENTS -->
 
 <section id="events">
 
 <h2 class="reveal">Events & Hackathons</h2>
 
-<div class="card reveal">
-Socio Vision – Top 10 Finish
+<div class="timeline reveal">
+
+<div class="timeline-item">
+<h3>Socio Vision – <strong>Top 10 Finish</strong></h3>
 </div>
 
-<div class="card reveal">
-Hidden Leaf Hackathon – Hardware Rapid Development
+<div class="timeline-item">
+<h3>HackHarbor 2.0 – <strong>Top 30 Finish</strong></h3>
 </div>
 
-<div class="card reveal">
-Smart India Hackathon Internal Selection – Team Jarvis
+<div class="timeline-item">
+<h3>Robo Soccer – <strong>3rd Place</strong></h3>
 </div>
 
-<div class="card reveal">
-HackHarbor 2.0 – Top 30 Finish
+<div class="timeline-item">
+<h3>Skill Sangam Hackathon – <strong>Top 9 Finish</strong></h3>
 </div>
 
-<div class="card reveal">
-Robo Soccer – 3rd Place
+<div class="timeline-item">
+<h3>MIT Research Conclave – Research Representation</h3>
 </div>
 
-<div class="card reveal">
-Mini Marvels – AI Smart Home System Presentation
+<div class="timeline-item">
+<h3>Smart India Hackathon – Team Jarvis</h3>
 </div>
 
-<div class="card reveal">
-Skill Sangam Hackathon – Top 9 Finish
+<div class="timeline-item">
+<h3>MSME Hackathon 5.0 – Internal Selection</h3>
 </div>
 
-<div class="card reveal">
-MIT Research Conclave – Research Representation
-</div>
-
-<div class="card reveal">
-MSME Hackathon 5.0 – Internal Selection
-</div>
-
-<div class="card reveal">
-Smart India Hackathon – Elderion-X System Development
 </div>
 
 </section>
 
-
-<!-- Projects (Empty for now) -->
+<!-- PROJECTS -->
 
 <section id="projects">
 
 <h2 class="reveal">Projects</h2>
 
 <div class="card reveal">
-Projects will be added here.
+Advanced Embedded Systems & RF-based Communication Projects
+(Details will be updated soon)
 </div>
 
 </section>
 
-
-<!-- Contact -->
+<!-- CONTACT -->
 
 <section id="contact">
 
 <h2 class="reveal">Contact</h2>
 
 <div class="contact reveal">
-
-<p>Phone: 9632253513</p>
-
-<p>Email: tusharn2534@gmail.com</p>
-
-<div class="social">
-
-<a href="#">GitHub</a>
-<a href="#">LinkedIn</a>
-
-</div>
-
+<p><strong>Phone:</strong> 9632253513</p>
+<p><strong>Email:</strong> tusharn2534@gmail.com</p>
 </div>
 
 </section>
 
-
 <footer>
-
-© 2026 Tushar N
-
+© 2026 Tushar N — Embedded Systems Engineer
 </footer>
-
-
-<!-- Animation Script -->
 
 <script>
 
-function reveal() {
-
-var reveals = document.querySelectorAll(".reveal");
-
-for (var i = 0; i < reveals.length; i++) {
-
-var windowHeight = window.innerHeight;
-var elementTop = reveals[i].getBoundingClientRect().top;
-
-if (elementTop < windowHeight - 50) {
-
+function reveal(){
+var reveals=document.querySelectorAll(".reveal");
+for(var i=0;i<reveals.length;i++){
+var windowHeight=window.innerHeight;
+var elementTop=reveals[i].getBoundingClientRect().top;
+if(elementTop<windowHeight-100){
 reveals[i].classList.add("active");
-
 }
-
 }
-
 }
-
-window.addEventListener("scroll", reveal);
-
+window.addEventListener("scroll",reveal);
 reveal();
 
 </script>
-
 
 </body>
 </html>
