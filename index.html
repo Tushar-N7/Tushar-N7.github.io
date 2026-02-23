@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tushar N</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
 *{
   margin:0;
@@ -15,18 +14,44 @@
 }
 
 body{
-  background: linear-gradient(120deg,#0f0c29,#302b63,#24243e);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  background: #0a0f25;
   color:white;
   overflow-x:hidden;
   scroll-behavior: smooth;
+  position: relative;
 }
 
-@keyframes gradientBG{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
+/* Abstract floating shapes */
+body::before, body::after{
+  content:"";
+  position: absolute;
+  border-radius:50%;
+  filter: blur(150px);
+  opacity:0.3;
+  animation: float 20s infinite alternate;
+  z-index:0;
+}
+
+body::before{
+  width:500px;
+  height:500px;
+  background: radial-gradient(circle at center, #7f7fff, #4b4bff);
+  top: -100px;
+  left: -150px;
+}
+
+body::after{
+  width:400px;
+  height:400px;
+  background: radial-gradient(circle at center, #ff9e9e, #ff6e6e);
+  bottom: -100px;
+  right: -100px;
+}
+
+@keyframes float{
+  0% { transform: translateY(0px) translateX(0px);}
+  50% { transform: translateY(50px) translateX(-30px);}
+  100% { transform: translateY(0px) translateX(0px);}
 }
 
 /* Navbar */
@@ -39,7 +64,7 @@ nav{
   display:flex;
   justify-content:center;
   gap:20px;
-  background: rgba(0,0,0,0.3);
+  background: rgba(10,15,37,0.5);
   backdrop-filter: blur(15px);
   box-shadow: 0 8px 32px rgba(0,0,0,0.4);
   z-index:100;
@@ -48,17 +73,17 @@ nav{
 nav a{
   color:white;
   text-decoration:none;
-  font-weight:600;
+  font-weight:500;
   padding:10px 24px;
   border-radius:12px;
-  background:linear-gradient(145deg,#ff4e50,#f9d423);
-  box-shadow: 4px 4px 12px rgba(0,0,0,0.4), -4px -4px 12px rgba(255,255,255,0.1);
-  transition: all 0.3s ease;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.3), -4px -4px 12px rgba(255,255,255,0.05);
+  transition: all 0.4s cubic-bezier(.25,.8,.25,1);
 }
 
 nav a:hover{
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 6px 6px 18px rgba(0,0,0,0.5), -6px -6px 18px rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.12);
 }
 
 /* Section */
@@ -71,13 +96,23 @@ section{
   text-align:center;
   padding:40px;
   scroll-snap-align:start;
+  position: relative;
+  z-index:1;
+  opacity:0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+section.visible{
+  opacity:1;
+  transform: translateY(0px);
 }
 
 /* Headings */
 section h1{
   font-size: 60px;
   font-weight:700;
-  background: linear-gradient(90deg,#ff4e50,#f9d423);
+  background: linear-gradient(90deg,#7f7fff,#4b4bff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
@@ -88,38 +123,39 @@ section p{
   font-size:18px;
   max-width:700px;
   line-height:1.6;
-  color:#ddd;
+  color:#ccc;
+  margin-bottom:20px;
 }
 
 /* Cards */
 .card{
   background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(12px);
   border-radius:20px;
-  padding:30px;
+  padding:25px 30px;
   margin:20px;
   width:300px;
   text-align:left;
-  box-shadow: 8px 8px 30px rgba(0,0,0,0.6), -8px -8px 30px rgba(255,255,255,0.1);
-  transition: all 0.4s ease;
+  box-shadow: 6px 6px 20px rgba(0,0,0,0.4), -6px -6px 20px rgba(255,255,255,0.05);
+  transition: all 0.5s cubic-bezier(.25,.8,.25,1);
   cursor:pointer;
 }
 
 .card:hover{
-  transform: translateY(-10px) scale(1.05) rotateX(2deg);
-  box-shadow: 12px 12px 40px rgba(0,0,0,0.7), -12px -12px 40px rgba(255,255,255,0.2);
+  transform: translateY(-8px) scale(1.05) rotateX(2deg);
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.6), -10px -10px 30px rgba(255,255,255,0.1);
 }
 
-/* Contact & Social links */
+/* Social links */
 a.social-link{
-  color:#f9d423;
+  color:#7f7fff;
   font-weight:600;
   text-decoration:none;
-  transition: 0.3s;
+  transition:0.3s;
 }
 a.social-link:hover{
-  color:#ff4e50;
-  text-shadow: 0 0 8px #ff4e50;
+  color:#ff9e9e;
+  text-shadow: 0 0 6px #ff9e9e;
 }
 
 /* Responsive */
@@ -134,7 +170,6 @@ a.social-link:hover{
     width:90%;
   }
 }
-
 </style>
 </head>
 <body>
@@ -182,6 +217,24 @@ a.social-link:hover{
   <p>GitHub: <a class="social-link" href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
   <p>LinkedIn: <a class="social-link" href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
 </section>
+
+<script>
+// Animate sections on scroll
+const sections = document.querySelectorAll('section');
+
+function checkVisible(){
+  const triggerBottom = window.innerHeight * 0.85;
+  sections.forEach(section=>{
+    const top = section.getBoundingClientRect().top;
+    if(top < triggerBottom){
+      section.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', checkVisible);
+window.addEventListener('load', checkVisible);
+</script>
 
 </body>
 </html>
