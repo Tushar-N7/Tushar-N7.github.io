@@ -18,7 +18,7 @@ window.onscroll = () => {
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-        if(top >= offset && top < offset + height) {
+        if (top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
                 document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
@@ -36,7 +36,7 @@ window.onscroll = () => {
 };
 
 /* ================= ScrollReveal Animations ================= */
-ScrollReveal({ 
+ScrollReveal({
     reset: true,
     distance: '80px',
     duration: 2000,
@@ -50,7 +50,7 @@ ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 /* ================= Typed JS for Typewriter effect ================= */
 const typed = new Typed('.multiple-text', {
-    strings: ['Frontend Developer', 'UI/UX Designer', '3D Web Enthusiast', 'Creative Coder'],
+    strings: ['Embedded Systems Engineer', 'Hardware Firmware Developer', 'IoT Enthusiast', 'PCB Designer'],
     typeSpeed: 50,
     backSpeed: 50,
     backDelay: 1000,

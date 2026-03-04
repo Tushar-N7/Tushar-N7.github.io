@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Background glowing orbs -->
@@ -21,7 +23,7 @@
     <!-- Header / Navbar -->
     <header class="header">
         <a href="#home" class="logo">Port<span>folio.</span></a>
-        
+
         <div class="bx bx-menu" id="menu-icon"></div>
 
         <nav class="navbar">
@@ -37,26 +39,29 @@
     <section class="home" id="home">
         <div class="home-content">
             <h3>Hello, It's Me</h3>
-            <h1>John Doe</h1>
+            <h1>Tushar</h1>
             <h3>And I'm a <span class="multiple-text"></span></h3>
-            <p>I build 3D animated, visually stunning, and highly responsive web experiences. Welcome to my creative universe where code meets design.</p>
-            
+            <p>I specialize in microcontrollers, IoT, PCB design, and bridging the gap between hardware and firmware to
+                build powerful embedded systems.</p>
+
             <div class="social-links">
                 <a href="#" style="--i:1"><i class='bx bxl-github'></i></a>
-                <a href="#" style="--i:2"><i class='bx bxl-linkedin' ></i></a>
-                <a href="#" style="--i:3"><i class='bx bxl-twitter' ></i></a>
-                <a href="#" style="--i:4"><i class='bx bxl-dribbble' ></i></a>
+                <a href="#" style="--i:2"><i class='bx bxl-linkedin'></i></a>
+                <a href="#" style="--i:3"><i class='bx bx-envelope'></i></a>
             </div>
-            <a href="#contact" class="btn">Hire Me</a>
+            <a href="#contact" class="btn">Contact Me</a>
         </div>
 
-        <div class="home-img" data-tilt data-tilt-max="25" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.5">
+        <div class="home-img" data-tilt data-tilt-max="25" data-tilt-speed="400" data-tilt-glare="true"
+            data-tilt-max-glare="0.5">
             <div class="profile-card-3d">
                 <div class="hologram-effect"></div>
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Profile">
+                <!-- Placeholder for User's actual photo -->
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    alt="Profile">
                 <div class="card-info">
-                    <h4>Creator</h4>
-                    <p>Building the Future</p>
+                    <h4>Tushar</h4>
+                    <p>Embedded Engineer</p>
                 </div>
             </div>
         </div>
@@ -65,68 +70,103 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-img" data-tilt>
-            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Coding">
+            <!-- Embedded Systems Stock photo -->
+            <img src="https://images.unsplash.com/photo-1592505230985-782aef19f96c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="Coding">
         </div>
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
-            <h3>Frontend Architect & 3D Enthusiast</h3>
-            <p>I specialize in crafting premium web layouts, implementing smooth transitions, and building interfaces that wow users. With a strong eye for detail, I combine logic with art to deliver world-class digital products.</p>
-            <a href="#" class="btn">Read More</a>
+            <h3>Embedded Systems & Hardware Developer</h3>
+            <p>I am an ambitious engineer (B.E. 2023–2027, CGPA: 7.18) passionate about building real-world hardware
+                solutions. From circuit design and PCB debugging to writing low-level firmware in C and Python, I thrive
+                on bringing complex electronic systems to life.</p>
+            <br>
+            <h3>Experience</h3>
+            <p><strong>Aarvath Obitech Pvt. Ltd. (Intern)</strong> - Embedded firmware development, hardware
+                interfacing, PCB testing, and system validation.</p>
+            <p><strong>RDL (Ongoing Intern)</strong> - Embedded system integration, protocol handling, real-time system
+                validation.</p>
+            <br>
+            <h3>Hackathons & Events</h3>
+            <ul style="list-style: none; color: #ccc; font-size: 1.6rem; line-height: 1.8;">
+                <li><i class='bx bx-check-circle' style='color:var(--main-color)'></i> Smart India Hackathon 2024
+                    (Internal Selection)</li>
+                <li><i class='bx bx-check-circle' style='color:var(--main-color)'></i> MSME Presentation – ElderionX
+                    Wearable</li>
+                <li><i class='bx bx-check-circle' style='color:var(--main-color)'></i> 24Hr Hackathon – Smart Inventory
+                    System (Top 10)</li>
+                <li><i class='bx bx-check-circle' style='color:var(--main-color)'></i> Hidden Leaf Hackathon – Embedded
+                    Desk Device Concept</li>
+            </ul>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section class="skills" id="skills">
-        <h2 class="heading">My <span>Skills</span></h2>
-        
+        <h2 class="heading">Technical <span>Skills</span></h2>
+
         <div class="skills-container">
             <div class="skill-box" data-tilt data-tilt-scale="1.05">
-                <i class='bx bxl-html5' style="color: #e34f26;"></i>
-                <h3>Frontend Development</h3>
-                <p>HTML, CSS, JS, React</p>
+                <i class='bx bx-microchip' style="color: #00ffcc;"></i>
+                <h3>Microcontrollers & SBCs</h3>
+                <p>ESP32, Arduino Uno, STM, VSDSquadron Mini (RISC-V), Raspberry Pi, NVIDIA Jetson Nano</p>
             </div>
             <div class="skill-box" data-tilt data-tilt-scale="1.05">
-                <i class='bx bxl-css3' style="color: #264de4;"></i>
-                <h3>UI/UX Styling</h3>
-                <p>Tailwind, SCSS, Animations</p>
+                <i class='bx bx-code-block' style="color: #264de4;"></i>
+                <h3>Programming</h3>
+                <p>C (Embedded Systems), Python (Debugging & Automation)</p>
             </div>
             <div class="skill-box" data-tilt data-tilt-scale="1.05">
-                <i class='bx bx-cube-alt' style="color: #00ffcc;"></i>
-                <h3>3D & WebGL</h3>
-                <p>Three.js, Spline, VanillaTilt</p>
+                <i class='bx bx-wifi' style="color: #e34f26;"></i>
+                <h3>Protocols</h3>
+                <p>I2C, SPI, UART, MQTT, LoRa, NRF24, WiFi, Bluetooth</p>
+            </div>
+            <div class="skill-box" data-tilt data-tilt-scale="1.05">
+                <i class='bx bx-layer' style="color: #ff007f;"></i>
+                <h3>PCB & Hardware</h3>
+                <p>Custom ESP32 Expansion Boards, PCB Debugging, EasyEDA, KiCad, Hardware-Firmware Interfacing</p>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section class="projects" id="projects">
-        <h2 class="heading">Latest <span>Projects</span></h2>
-        
+        <h2 class="heading">Featured <span>Projects</span></h2>
+
         <div class="projects-container">
             <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project 1">
+                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Project 1">
                 <div class="project-layer">
-                    <h4>Neon E-Commerce</h4>
-                    <p>A glowing, modern online store with 3D product viewing.</p>
-                    <a href="#"><i class='bx bx-link-external' ></i></a>
-                </div>
-            </div>
-            
-            <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
-                <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project 2">
-                <div class="project-layer">
-                    <h4>Crypto Dashboard</h4>
-                    <p>Real-time analytics with glassmorphism UI elements.</p>
-                    <a href="#"><i class='bx bx-link-external' ></i></a>
+                    <h4>Anomaly Detection & Secure Telemetry</h4>
+                    <p>Custom ESP32 board design, I2C/SPI/UART sensors, MQTT telemetry, anomaly detection logic.</p>
                 </div>
             </div>
 
             <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
-                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project 3">
+                <img src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Project 2">
                 <div class="project-layer">
-                    <h4>Metaverse Landing</h4>
-                    <p>Immersive 3D landing page for a Web3 concept.</p>
-                    <a href="#"><i class='bx bx-link-external' ></i></a>
+                    <h4>Custom RC System</h4>
+                    <p>NRF24 wireless communication, real-time signal transmission, and control logic.</p>
+                </div>
+            </div>
+
+            <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Project 3">
+                <div class="project-layer">
+                    <h4>Multi-Bot Wireless Coordination</h4>
+                    <p>Identical embedded bots logic using NRF24 decentralized communication.</p>
+                </div>
+            </div>
+
+            <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
+                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Project 4">
+                <div class="project-layer">
+                    <h4>AI Smart Home Safety</h4>
+                    <p>IoT monitoring, wireless alerts, sensor integration, firmware debugging.</p>
                 </div>
             </div>
         </div>
@@ -162,7 +202,7 @@
 
     <!-- ScrollReveal JS -->
     <script src="https://unpkg.com/scrollreveal"></script>
-    
+
     <!-- Typed JS -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
@@ -172,4 +212,5 @@
     <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
+
 </html>
