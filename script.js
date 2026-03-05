@@ -61,3 +61,52 @@ const typed = new Typed('.multiple-text', {
 // The data-tilt attributes in HTML already handle initialization if the library is loaded via script tag at the end.
 // By default VanillaTilt scans for elements with data-tilt on load.
 // We've customized settings like data-tilt-max, data-tilt-speed via HTML attributes to create the beautiful floating card feel.
+
+/* ================= Particles JS Initialization ================= */
+if (document.getElementById('particles-js')) {
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#00ffee" },
+            "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 } },
+            "opacity": { "value": 0.5, "random": true, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } },
+            "size": { "value": 3, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false } },
+            "line_linked": { "enable": true, "distance": 150, "color": "#00ffee", "opacity": 0.4, "width": 1 },
+            "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+            "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } }
+        },
+        "retina_detect": true
+    });
+}
+
+/* ================= Custom Cursor ================= */
+const cursor = document.querySelector('.cursor');
+const cursor2 = document.querySelector('.cursor2');
+
+if (cursor && cursor2) {
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+
+        setTimeout(() => {
+            cursor2.style.left = e.clientX + 'px';
+            cursor2.style.top = e.clientY + 'px';
+        }, 50);
+    });
+
+    const hoverElements = document.querySelectorAll('a, .btn, input, textarea, .bx, .project-box, .skill-box');
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('cursor-hover');
+            cursor2.classList.add('cursor2-hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('cursor-hover');
+            cursor2.classList.remove('cursor2-hover');
+        });
+    });
+}
