@@ -110,3 +110,182 @@ if (cursor && cursor2) {
         });
     });
 }
+
+/* ================= Project Details Modal Logic ================= */
+const projectData = {
+    'smart-home': {
+        title: 'AI-Powered Smart Home Automation',
+        image: 'https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        tech: ['ESP32', 'Python', 'OpenCV', 'Firebase', 'MQTT'],
+        description: 'A comprehensive smart home ecosystem featuring AI-driven automation. The system uses local computer vision for face recognition and animal threat detection, integrated with a custom ESP32-based sensor network.',
+        highlights: [
+            'Real-time face recognition for secure entry',
+            'Animal threat detection using localized AI models',
+            'Cross-platform app control via Firebase',
+            'Self-learning automation routines based on user habits'
+        ]
+    },
+    'women-safety': {
+        title: 'Women Safety Analytics',
+        image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        tech: ['Python', 'OpenCV', 'TensorFlow', 'Twilio'],
+        description: 'An intelligent surveillance system designed for public safety. It predicts age and gender in real-time and calculates proximity between individuals to detect potential harassment or suspicious behavior.',
+        highlights: [
+            'Real-time Gender and Age Prediction',
+            'Suspicious activity detection using distance calculation',
+            'Automated alerts to nearby authorities via Twilio',
+            'Heatmap generation for high-risk zones'
+        ]
+    },
+    'inventory-mgmt': {
+        title: 'Smart Inventory Management System',
+        image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        tech: ['ESP32', 'RFID', 'HX711 Load Cell', 'YOLOv8', 'Firebase'],
+        description: 'A hybrid inventory system combining RFID tracking with computer vision. It uses weighing scales (HX711) for precise stock monitoring and YOLOv8 for visual verification of items.',
+        highlights: [
+            'Dual-method tracking (RFID + CV) for 99.9% accuracy',
+            'Automated restock alerts based on weight thresholds',
+            'Offline-first tracking with Firebase cloud sync',
+            'Top 9 Finish in 24Hr National Hackathon'
+        ]
+    },
+    'elderion-x': {
+        title: 'Elderion-X: Smart Elder-Care',
+        image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        tech: ['ESP32', 'MPU6050', 'ESP-NOW Mesh', 'C++'],
+        description: 'A wearable health and safety device for the elderly. It utilizes a mesh network to ensure connectivity within a large home without relying on centralized WiFi, providing fall detection and vital signs monitoring.',
+        highlights: [
+            'Reliable Fall Detection using 6-axis IMU sensors',
+            'ESP-NOW Mesh network for robust intra-home communication',
+            'Low-power optimization for 1-week battery life',
+            'MSME Presented & SIH 2025 shortlisted project'
+        ]
+    },
+    'rail-fault': {
+        title: 'Railway Track Fault Detection Bot',
+        image: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        tech: ['Raspberry Pi 5', 'Acoustic Sensors', 'Computer Vision', 'LiDAR'],
+        description: 'Autonomous inspection bot winning 1st Place at ELECTROTHON 2026. It detects microscopic cracks in rails using a combination of acoustic resonance analysis and high-speed infrared imaging.',
+        highlights: [
+            '🥇 1st Place Winner - ELECTROTHON 2026',
+            'Autonomous track navigation and fault marking',
+            'Micro-crack detection via Acoustic Sensing',
+            'High-precision GPS logging of detected faults'
+        ]
+    },
+    'secure-telemetry': {
+        title: 'Anomaly Detection & Secure Telemetry',
+        image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        tech: ['Custom PCB', 'ESP32', 'Cloud ML', 'Python'],
+        description: 'A secure hardware-to-cloud bridge featuring a custom-designed ESP32 expansion board. It monitors industrial equipment health by streaming high-frequency sensor data to cloud-based ML models for anomaly detection.',
+        highlights: [
+            'Custom PCB designed for high-noise industrial environments',
+            'Secure telemetry with hardware-level encryption',
+            'Integration with Cloud ML for predictive maintenance',
+            'Multi-COM port analysis tool built with Python'
+        ]
+    },
+    'rc-system': {
+        title: 'Custom RC System (Tx/Rx)',
+        image: 'https://images.unsplash.com/photo-1596733430284-f7437764b1a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        tech: ['ESP32', 'NRF24L01+', 'PWM', 'LiPo Management'],
+        description: 'A robust, DIY Radio Control system built from scratch. It features high-range communication using external antennas and a custom firmware stack for ultra-low latency servo and motor control.',
+        highlights: [
+            '2.4GHz high-gain NRF24L01+ communication',
+            'Custom telemetry feedback on OLED display',
+            'Integrated LiPo battery charging and monitoring',
+            'Used for custom UAV and robotics control'
+        ]
+    },
+    'safety-monitoring': {
+        title: 'Industrial Safety Monitoring System',
+        image: 'https://images.unsplash.com/photo-1541888086925-eb2c1e4c965e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        tech: ['ESP32', 'MQ Sensors', 'OpenCV', 'Twilio'],
+        description: 'An AI+IoT guardian for industrial workshops. It combines chemical gas sensing with visual flame detection to provide early warnings for fire or toxic leaks.',
+        highlights: [
+            'Gas leak detection (CO, Smoke, LPG) using MQ-series sensors',
+            'Visual Flame detection using optimized OpenCV scripts',
+            'Twilio SMS and Voice call alerts for emergency responders',
+            'Local OLED display and industrial-grade relay triggers'
+        ]
+    },
+    'swarm-bot': {
+        title: 'Smarter Swarm Bot System',
+        image: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        tech: ['ESP32', 'ESP32-CAM', 'NRF24L01', 'Wireless Mesh'],
+        description: 'A scalable swarm robotics framework allowing multiple bots to coordinate tasks. Features a Master-Slave architecture where the leader executes complex pathfinding and shares coordinates with the swarm.',
+        highlights: [
+            'Synchronized movement across 5+ robot nodes',
+            'Leader-follower coordination via ESP-NOW',
+            'Visual obstacle sharing using leader-mounted ESP32-CAM',
+            'Scalable architecture for adding/removing bots on the fly'
+        ]
+    }
+};
+
+const modal = document.getElementById('project-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalImg = document.getElementById('modal-image');
+const modalDesc = document.getElementById('modal-description');
+const modalTech = document.getElementById('modal-tech');
+const modalHighlights = document.getElementById('modal-highlights');
+const closeBtn = document.querySelector('.close-modal');
+
+// Open Modal logic
+document.querySelectorAll('.project-box').forEach(box => {
+    box.onclick = () => {
+        const projectId = box.getAttribute('data-project-id');
+        const data = projectData[projectId];
+
+        if (data) {
+            modalTitle.innerText = data.title;
+            modalImg.src = data.image;
+            modalDesc.innerText = data.description;
+
+            // Clear and add tech badges with staggered animation delay
+            modalTech.innerHTML = '';
+            data.tech.forEach((t, index) => {
+                const badge = document.createElement('span');
+                badge.className = 'tech-badge';
+                badge.style.setProperty('--i', index);
+                badge.innerText = t;
+                modalTech.appendChild(badge);
+            });
+
+            // Clear and add highlights with staggered animation delay
+            modalHighlights.innerHTML = '<h4>Key Highlights</h4>';
+            data.highlights.forEach((h, index) => {
+                const item = document.createElement('div');
+                item.className = 'highlight-item';
+                item.style.setProperty('--i', index);
+                item.innerHTML = `<i class='bx bx-check-double'></i> ${h}`;
+                modalHighlights.appendChild(item);
+            });
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Disable scroll
+        }
+    };
+});
+
+// Close Modal logic
+const closeModal = () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Re-enable scroll
+};
+
+closeBtn.onclick = closeModal;
+
+// Close on background click
+window.onclick = (e) => {
+    if (e.target == modal) {
+        closeModal();
+    }
+};
+
+// Close on Escape key
+window.onkeydown = (e) => {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+};
