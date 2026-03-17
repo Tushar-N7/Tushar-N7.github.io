@@ -150,7 +150,8 @@
         <h2 class="heading">Featured <span>Projects</span></h2>
 
         <div class="projects-container">
-            <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
+            <div class="project-box" data-project-id="smart-home" data-tilt data-tilt-glare="true"
+                data-tilt-max-glare="0.5">
                 <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="AI-Powered Smart Home Automation">
                 <div class="project-layer">
@@ -160,7 +161,8 @@
                 </div>
             </div>
 
-            <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
+            <div class="project-box" data-project-id="women-safety" data-tilt data-tilt-glare="true"
+                data-tilt-max-glare="0.5">
                 <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Women Safety Analytics">
                 <div class="project-layer">
@@ -171,7 +173,8 @@
             </div>
 
 
-            <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
+            <div class="project-box" data-project-id="inventory-mgmt" data-tilt data-tilt-glare="true"
+                data-tilt-max-glare="0.5">
                 <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Smart Inventory Management System">
                 <div class="project-layer">
@@ -180,7 +183,8 @@
                 </div>
             </div>
 
-            <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
+            <div class="project-box" data-project-id="elderion-x" data-tilt data-tilt-glare="true"
+                data-tilt-max-glare="0.5">
                 <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Elderion-X">
                 <div class="project-layer">
@@ -190,7 +194,8 @@
                 </div>
             </div>
 
-            <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
+            <div class="project-box" data-project-id="rail-fault" data-tilt data-tilt-glare="true"
+                data-tilt-max-glare="0.5">
                 <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Railway Track Fault Detection Bot">
                 <div class="project-layer">
@@ -200,7 +205,8 @@
                 </div>
             </div>
 
-            <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
+            <div class="project-box" data-project-id="secure-telemetry" data-tilt data-tilt-glare="true"
+                data-tilt-max-glare="0.5">
                 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="ESP32 Expansion Board">
                 <div class="project-layer">
@@ -211,7 +217,8 @@
                 </div>
             </div>
 
-            <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
+            <div class="project-box" data-project-id="rc-system" data-tilt data-tilt-glare="true"
+                data-tilt-max-glare="0.5">
                 <img src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Custom RC System">
                 <div class="project-layer">
@@ -221,7 +228,8 @@
                 </div>
             </div>
 
-            <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
+            <div class="project-box" data-project-id="safety-monitoring" data-tilt data-tilt-glare="true"
+                data-tilt-max-glare="0.5">
                 <img src="https://images.unsplash.com/photo-1541888086925-eb2c1e4c965e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Industrial Safety Monitoring System">
                 <div class="project-layer">
@@ -231,7 +239,8 @@
                 </div>
             </div>
 
-            <div class="project-box" data-tilt data-tilt-glare="true" data-tilt-max-glare="0.5">
+            <div class="project-box" data-project-id="swarm-bot" data-tilt data-tilt-glare="true"
+                data-tilt-max-glare="0.5">
                 <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Smarter Swarm Bot System">
                 <div class="project-layer">
@@ -282,6 +291,28 @@
 
     <!-- Particles JS -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Project Details Modal -->
+    <div class="project-modal" id="project-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-img">
+                    <img src="" alt="" id="modal-image">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title">Project Title</h2>
+                    <div class="tech-stack" id="modal-tech">
+                        <!-- Tech badges will be inserted here -->
+                    </div>
+                    <p id="modal-description">Detailed description goes here...</p>
+                    <div class="modal-highlights" id="modal-highlights">
+                        <!-- Highlights will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Custom JS -->
     <script src="script.js"></script>
