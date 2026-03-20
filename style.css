@@ -767,11 +767,18 @@ span {
         background: rgba(11, 6, 31, 0.98);
         backdrop-filter: blur(25px);
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-        display: none;
+        display: block;
+        /* Always block but hidden */
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s ease;
     }
 
     .navbar.active {
-        display: block;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
     }
 
     .navbar a {
