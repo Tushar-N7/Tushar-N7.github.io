@@ -46,45 +46,49 @@ body {
     cursor: none;
 }
 
-/* Custom Cursor */
+/* Advanced Custom Cursor */
 .cursor {
     position: fixed;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background: var(--main-color);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px var(--main-color), 0 0 60px var(--main-color), 0 0 100px var(--main-color);
-    transition: width 0.2s, height 0.2s, background-color 0.2s, opacity 0.2s;
+    box-shadow: 0 0 15px var(--main-color);
+    transition: transform 0.1s ease-out, background 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
 
 .cursor2 {
     position: fixed;
-    width: 30px;
-    height: 30px;
-    border: 2px solid var(--main-color);
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid var(--main-color);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9998;
     transform: translate(-50%, -50%);
-    transition: width 0.2s, height 0.2s, background-color 0.2s, opacity 0.2s;
-    transition-timing-function: ease-out;
+    transition: transform 0.15s ease-out, width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
 
 .cursor-hover {
-    width: 12px;
-    height: 12px;
+    transform: translate(-50%, -50%) scale(0.5);
     background: #fff;
-    box-shadow: 0 0 20px #fff;
 }
 
 .cursor2-hover {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background: rgba(0, 255, 238, 0.1);
     border-color: #fff;
+    border-width: 1px;
+}
+
+/* Magnetic Effect Class */
+.magnetic-wrap {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 a,
@@ -116,42 +120,40 @@ textarea,
     }
 }
 
-/* Background Glowing Orbs */
+/* Background Glowing Orbs (Mesh Gradient Style) */
 .bg-orb {
     position: fixed;
     border-radius: 50%;
-    filter: blur(100px);
+    filter: blur(120px);
     z-index: -1;
-    animation: float 10s infinite alternate ease-in-out;
+    mix-blend-mode: screen;
 }
 
 .orb-1 {
-    width: 400px;
-    height: 400px;
-    background: var(--main-color);
-    top: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--main-color) 0%, transparent 70%);
+    top: -20%;
     left: -10%;
-    opacity: 0.2;
+    opacity: 0.4;
 }
 
 .orb-2 {
-    width: 500px;
-    height: 500px;
-    background: var(--purple-glow);
-    bottom: -10%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, var(--purple-glow) 0%, transparent 70%);
+    bottom: -20%;
     right: -10%;
-    opacity: 0.3;
-    animation-delay: 2s;
+    opacity: 0.5;
 }
 
 .orb-3 {
-    width: 300px;
-    height: 300px;
-    background: #ff007f;
-    top: 40%;
-    left: 40%;
-    opacity: 0.15;
-    animation-duration: 15s;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #ff007f 0%, transparent 70%);
+    top: 30%;
+    left: 30%;
+    opacity: 0.25;
 }
 
 @keyframes float {
@@ -242,15 +244,9 @@ span {
     animation: slideRight 1s ease forwards;
 }
 
-.navbar a {
-    font-size: 1.7rem;
-    color: var(--text-color);
-    margin-left: 4rem;
-    font-weight: 500;
-    transition: .3s;
-    opacity: 0;
-    animation: slideTop .5s ease forwards;
-    animation-delay: calc(.2s * var(--i));
+/* Initial states for GSAP (handled in JS now) */
+.logo, .navbar a, .home-content h3, .home-content h1, .home-content p, .social-links a, .home-content .btn, .home-img, .heading {
+    visibility: hidden;
 }
 
 .navbar a:hover,
@@ -494,8 +490,9 @@ span {
 
 .skill-box:hover {
     border-color: var(--main-color);
-    transform: translateY(-10px);
-    box-shadow: 0 0 30px var(--glow-color), inset 0 0 20px rgba(0, 255, 238, 0.1);
+    transform: translateY(-10px) rotateX(10deg) rotateY(10deg);
+    box-shadow: 0 20px 50px rgba(0, 255, 238, 0.2);
+    background: rgba(0, 255, 238, 0.05);
 }
 
 .skill-box i {
